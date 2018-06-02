@@ -1,0 +1,26 @@
+{% extends "sp/base.html" %}
+{% load blog_extras %}
+{% load markdown_deux_tags %}
+
+{% block title %}{{ blogpost.title }} - webディレクターブログ{% endblock %}
+
+{% block content %}
+<article class="article article-post">
+    <div class="article-date">{{ blogpost.created | date_format }}</div>
+    <div class="article-container">
+        <div class="article-h1">
+            <h1 class="article-title">{{ blogpost.title }}</h1>
+        </div>
+        <div class="article-contents">
+            {{ blogpost.content | markdown | custom_html | safe }}
+        </div>
+        <div class="article-taglist">
+            <ul>
+                {% for bpt in blogpost.blogposttag_set.all %}
+                <li><a href="{% url 'blog:tag_search' tag_id=bpt.tag_id %}">{{ bpt.tag.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</article>
+{% endblock content %}

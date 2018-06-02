@@ -1,0 +1,20 @@
+{% load blog_extras %}
+
+{% for post in latest_post_list %}
+    <li class="article-list-item">
+        <a href="{% url 'blog:post_detail' category_id=post.category_id pk=post.id %}">
+            <div class="article-date">{{ post.created | date_format }}</div>
+            <div class="article-category">{{ post.category.name }}</div>
+            <div class="article-list-container">
+                    <h2>{{ post.title }}</h2>
+                    <img src="{{ post.image_square.image | modify_image_path }}" alt="{{ post.image_square.name }}">
+                    <p class="article-thumbnail">{{ post.seo_description | limit_text:80 }}</p>
+                    <ul class="article-list-tag">
+                        {% for bpt in post.blogposttag_set.all %}
+                            <li class="tag-list">{{ bpt.tag.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+        </a>
+    </li>
+{% endfor %}

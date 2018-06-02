@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load blog_extras %}
+
+{% block title %}{{ tagname.name }} - webディレクターブログ{% endblock %}
+
+{% block breadcrumbs %}
+{% if tagname %}
+<li><a href="{% url 'blog:top' %}">Home</a><span class="arrow"></span></li>
+<li><a href="">{{ tagname.name }}</a></li>
+{% endif %}
+{% endblock breadcrumbs %}
+
+{% block content %}
+<article class="article">
+
+    {% if tagname %}
+        <h1 class="article-list-h1">{{ tagname.name }}</h1>
+        <div class="article-list-h1description">{{ tagname.description }}</div>
+    {% endif %}
+
+    {% if latest_post_list %}
+        <ul class="article-list">
+        {% include 'blog/includes/postlist.html' %}
+        </ul>
+        {% include 'blog/includes/pagination.html' %}
+    {% else %}
+        <p>記事がありません。</p>
+    {% endif %}
+</article>
+{% endblock content %}

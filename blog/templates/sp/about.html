@@ -1,0 +1,12 @@
+{% extends "sp/base.html" %}
+
+{% block title %}webディレクターブログとは？ - webディレクターブログ{% endblock %}
+
+{% block breadcrumbs %}
+<li><a href="{% url 'blog:top' %}">Home</a><span class="arrow"></span></li>
+<li><a href="">webディレクターブログとは？</a></li>
+{% endblock breadcrumbs %}
+
+{% block content %}
+    {% include 'blog/includes/about_contents.html' %}
+{% endblock content %}

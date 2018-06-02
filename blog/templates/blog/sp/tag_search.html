@@ -1,0 +1,23 @@
+{% extends "sp/base.html" %}
+{% load blog_extras %}
+
+{% block title %}{{ tagname.name }} - webディレクターブログ{% endblock %}
+
+{% block content %}
+<article class="article article-search">
+
+    {% if tagname %}
+        <h1 class="article-list-h1">{{ tagname.name }}</h1>
+            <div class="article-list-h1description">{{ tagname.description }}</div>
+    {% endif %}
+
+    {% if latest_post_list_in_tag %}
+        <ul class="article-list">
+            {% include 'blog/includes/sp/postlist.html' %}
+        </ul>
+        {% include 'blog/includes/sp/pagination.html' %}
+    {% else %}
+        <p>記事がありません。</p>
+    {% endif %}
+</article>
+{% endblock content %}
