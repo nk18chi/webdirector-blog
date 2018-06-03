@@ -53,11 +53,6 @@ def date_format(value):
 
 
 @register.filter()
-def modify_image_path(value):
-    return re.sub(r'^blog(.*?)', r'\1', str(value))
-
-
-@register.filter()
 def add_int(value, int):
     return value + int
 

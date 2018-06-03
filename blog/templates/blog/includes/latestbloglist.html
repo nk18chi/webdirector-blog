@@ -4,7 +4,7 @@
     <ul>
         {% for post in blogpost %}
         <li><a href="{% url 'blog:post_detail' category_id=post.category_id pk=post.id %}">
-            <img src="{{ post.image_square.image | modify_image_path }}" alt="{{ post.image_square.name }}">
+            <img src="static/blog/img/contents/{{ post.image_square.image }}" alt="{{ post.image_square.name }}">
             <p>{{ post.title }}</p>
         </a></li>
         {% endfor %}
