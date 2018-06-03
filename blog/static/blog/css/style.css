@@ -50,6 +50,10 @@ a {
 
 /*  ------------------- orinal css start ------------------- */
 
+html {
+    font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+}
+
 /*  - header start - */
 
 .header {
