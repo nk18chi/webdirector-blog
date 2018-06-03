@@ -5,7 +5,7 @@ from .models import BlogPost, BlogCategory, BlogTag, BlogPostTag
 from .forms import ContactForm
 from user_agents import parse
 from django.contrib.syndication.views import Feed
-
+from django.shortcuts import get_object_or_404
 
 # def __ua(request):
 #     if parse(request.META['HTTP_USER_AGENT']).is_mobile:
@@ -67,7 +67,7 @@ class CategoryListView(generic.ListView):
         return context
 
     def get_queryset(self):
-        """return the last five published questions."""
+        get_object_or_404(BlogCategory, pk=self.kwargs['category_id'])
         return BlogPost.objects.filter(
             status__exact=2,
             category__exact=self.kwargs['category_id']
@@ -92,6 +92,7 @@ class TagListView(generic.ListView):
         return context
 
     def get_queryset(self):
+        get_object_or_404(BlogTag, pk=self.kwargs['tag_id'])
         return BlogPost.objects.filter(
             status__exact=2,
             blogposttag__tag_id__exact=self.kwargs['tag_id']
