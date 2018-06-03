@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 from django.db import models
-
+from django.conf import settings
 
 def delete_previous_file(function):
     """不要となる古いファイルを削除する為のデコレータ実装.
@@ -53,7 +53,7 @@ class Image(models.Model):
 
     name = models.CharField(max_length=50)
     upload_time = models.DateTimeField(default=datetime.now)
-    image = models.ImageField(upload_to='blog/static/blog/img/contents/')
+    image = models.ImageField(upload_to=settings.MEDIA_URL, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -66,8 +66,8 @@ class BlogPost(models.Model):
     status = models.IntegerField(default=1, choices=[(1, '下書き'), (2, '公開')])
     created = models.DateTimeField(editable=True, default=datetime.now)
     updated = models.DateTimeField(editable=False, default=datetime.now)
-    category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE)
-    image_square = models.ForeignKey(Image, on_delete=models.CASCADE)
+    category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE, null=True, blank=True)
+    image_square = models.ForeignKey(Image, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.title
