@@ -195,15 +195,17 @@ html {
 
 .article-contents h2 {
     font-size: 20px;
-    margin: 40px -10px 0px 0px;
+    margin: 40px 0px 0px 0px;
     padding: 10px 10px 10px 15px;
     color: rgb(51, 51, 51);
     background: rgb(235, 233, 211);
+    line-height: 25px;
 }
 
 .article-contents p {
     margin: 16px 0;
     line-height: 25px;
+    font-size: 14px;
 }
 
 .article-contents h3 {
@@ -212,7 +214,8 @@ html {
 }
 
 .article-contents ul {
-    margin: 36px 0;
+    margin: 20px 0;
+    font-size: 14px;
 }
 
 .article-contents li {
@@ -296,6 +299,7 @@ html {
 
 .article-list-container {
     overflow: hidden;
+    font-size: 18px;
 }
 
 .article-list-container h2 {
