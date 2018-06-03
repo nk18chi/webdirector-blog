@@ -3,6 +3,8 @@ from django.views.generic import TemplateView
 from . import views
 from blog.feeds import LatestEntriesFeed
 
+app_name = "blog"
+
 urlpatterns = [
     url(r'^$', views.TopView.as_view(), name='top'),
     url(r'^t_(?P<tag_id>[0-9]+)/$', views.TagListView.as_view(), name='tag_search'),
