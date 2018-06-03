@@ -9,7 +9,7 @@
             </div>
             <div class="article-list-container">
                     <h2>{{ post.title }}</h2>
-                    <img src="media/{{ post.image_square.image }}" alt="{{ post.image_square.name }}">
+                    <img src="/media/{{ post.image_square.image }}" alt="{{ post.image_square.name }}">
                     <p class="article-thumbnail">{{ post.seo_description | limit_text:80 }}</p>
                     <ul class="article-list-tag">
                         {% for bpt in post.blogposttag_set.all %}
