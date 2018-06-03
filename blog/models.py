@@ -66,8 +66,8 @@ class BlogPost(models.Model):
     status = models.IntegerField(default=1, choices=[(1, '下書き'), (2, '公開')])
     created = models.DateTimeField(editable=True, default=datetime.now)
     updated = models.DateTimeField(editable=False, default=datetime.now)
-    category = models.ForeignKey(BlogCategory)
-    image_square = models.ForeignKey(Image)
+    category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE)
+    image_square = models.ForeignKey(Image, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
