@@ -29,7 +29,7 @@
             <h1 class="article-title">{{ blogpost.title }}</h1>
         </div>
         <div class="article-contents">
-            {{ blogpost.content | markdown | custom_html | safe }}
+            {{ blogpost.content | trans_word | markdown | custom_html | convert_word | safe }}
         </div>
         <div class="article-taglist">
             <ul>

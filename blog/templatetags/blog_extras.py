@@ -26,9 +26,41 @@ def get_taglist():
 
 
 @register.filter()
+def trans_word(value):
+    text = re.sub(r'  |<br>', '@br@', value)
+    text = re.sub(r'```([\s\S]*?)```', r'@code_m@\1@code_m_e@', text)
+    text = re.sub(r'`(.*?)`', r'@code_s@\1@code_s_e@', text)
+    text = re.sub(r'<blockquote', r'@blockquote@', text)
+    text = re.sub(r'</blockquote>', r'@e_blockquote@', text)
+    text = re.sub(r'<p', r'@p@', text)
+    text = re.sub(r'</p>', r'@e_p@', text)
+    text = re.sub(r'<a href="(.*)">', r'@href \1@', text)
+    text = re.sub(r'</a>', r'@e_href@', text)
+    text = re.sub(r'<script', '@script@', text)
+    text = re.sub(r'</script>', '@e_script@', text)
+    return text
+
+@register.filter()
+def convert_word(value):
+    text = re.sub('@br@', '<br>', value)
+    text = re.sub(r'@code_m@(.*?)@code_m_e@', r'<code class="code-multi">\1</code>', text)
+    text = re.sub(r'@code_s@(.*?)@code_s_e@', r'<code class="code-simple">\1</code>', text)
+    text = re.sub('@blockquote@', '<blockquote', text)
+    text = re.sub('@e_blockquote@', '</blockquote>', text)
+    text = re.sub('@p@', '<p ', text)
+    text = re.sub('@e_p@', '</p> ', text)
+    text = re.sub('@href (.*?)@', r'<a href="\1">', text)
+    text = re.sub('@e_href@', '</a> ', text)
+    text = re.sub('@script@', '<script', text)
+    text = re.sub('@e_script@', '</script><p>', text)
+    text = re.sub(r'\[@youtube: (.*)\]', r'<div class="blog_in_iframe"><iframe src="\1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>', text)
+    return text
+
+
+@register.filter()
 def custom_html(value):
     # add_section
-    text = re.sub(r'\s', '', value)
+    text = re.sub(r'\s', ' ', value)
     text = re.sub('<h2>', '</section><section><h2>', text) + '</section>'
     text = re.sub(r'^</section>', '', text)
     text = re.sub('<h3>(.*?)</section>', r'<h3>\1</section></section>', text)

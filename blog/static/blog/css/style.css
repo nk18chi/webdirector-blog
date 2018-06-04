@@ -235,6 +235,7 @@ html {
     margin: -15px 0 15px 0;
     font-size: 30px;
     color: #222;
+    line-height: 40px;
 }
 
 .init-h2 {
@@ -285,6 +286,20 @@ html {
 .article-contents img {
     width: 100%;
     margin: 10px 0;
+}
+
+.code-simple {
+    background: #efefef;
+    color: #d84e8b;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.code-multi {
+    background: #333;
+    color: #fff;
+    display: block;
+    padding: 10px;
 }
 
 .article-taglist {
