@@ -243,6 +243,20 @@ html {
     margin: 10px 0;
 }
 
+.code-simple {
+    background: #efefef;
+    color: #d84e8b;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.code-multi {
+    background: #333;
+    color: #fff;
+    display: block;
+    padding: 10px;
+}
+
 .article-taglist {
     overflow: hidden;
     margin-top: 35px;
