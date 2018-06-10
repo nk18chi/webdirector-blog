@@ -280,6 +280,16 @@ html {
     display: block;
 }
 
+.sns-button {
+    overflow: hidden;
+    margin: 5px 0;
+}
+
+.sns-button ul li {
+    float: left;
+    margin: 5px 5px 0px;
+}
+
 .article-list {
     border-top: 1px solid #ccc;
 }

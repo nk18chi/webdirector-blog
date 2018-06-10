@@ -11,6 +11,7 @@
         <div class="article-h1">
             <h1 class="article-title">{{ blogpost.title }}</h1>
         </div>
+        {% include 'blog/includes/sns_button.html' %}
         <div class="article-contents">
             {{ blogpost.content | trans_word | markdown | custom_html | convert_word | safe }}
         </div>
@@ -21,6 +22,7 @@
                 {% endfor %}
             </ul>
         </div>
+        {% include 'blog/includes/sns_button.html' %}
     </div>
 </article>
 {% endblock content %}

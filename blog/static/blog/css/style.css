@@ -327,6 +327,11 @@ html {
     display: block;
 }
 
+.sns-button {
+    overflow: hidden;
+    margin: 15px 0 5px;
+}
+
 .sns-button ul li {
     float: left;
     margin: 0 5px;
