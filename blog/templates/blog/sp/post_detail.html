@@ -2,6 +2,10 @@
 {% load blog_extras %}
 {% load markdown_deux_tags %}
 
+{% block extrahead %}
+{% include 'blog/includes/og_meta.html' %}
+{% endblock %}
+
 {% block title %}{{ blogpost.title }} - webディレクターブログ{% endblock %}
 
 {% block content %}
