@@ -3,4 +3,4 @@
 <meta property="og:url" content="" />
 <meta property="og:title" content="{{ blogpost.title }}" />
 <meta property="og:description" content="{{ blogpost.seo_description }}" />
-<meta property="og:image" content="/media/{{ blogpost.image_square.image }}" />
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}/media/{{ blogpost.image_square.image }}" />
