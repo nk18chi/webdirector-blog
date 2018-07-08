@@ -3,4 +3,3 @@ __pycache__
 /media
 /blog/static/blog/img/contents/
 /manage.py
-/webdirectorblog/wsgi.py
