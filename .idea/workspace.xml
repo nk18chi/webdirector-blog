@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23e51d68-7794-475b-a3a9-be117a0a6e17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/templates/blog/includes/about_contents.html" afterPath="$PROJECT_DIR$/blog/templates/blog/includes/about_contents.html" />
-    </list>
+    <list default="true" id="23e51d68-7794-475b-a3a9-be117a0a6e17" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/blog/templates/blog/includes/about_contents.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="13" column="72" lean-forward="false" selection-start-line="13" selection-start-column="72" selection-end-line="13" selection-end-column="72" />
+              <caret line="13" column="170" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="170" />
               <folding />
             </state>
           </provider>
@@ -716,7 +714,7 @@
     <entry file="file://$PROJECT_DIR$/blog/templates/blog/includes/about_contents.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="72" lean-forward="false" selection-start-line="13" selection-start-column="72" selection-end-line="13" selection-end-column="72" />
+          <caret line="13" column="170" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="170" />
           <folding />
         </state>
       </provider>
