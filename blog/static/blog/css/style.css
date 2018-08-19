@@ -186,7 +186,7 @@ html {
 }
 
 .article-container {
-    padding: 50px 20px 10px;
+    padding: 50px 15px 10px;
     overflow: hidden;
 }
 
@@ -243,45 +243,60 @@ html {
 }
 
 .article-contents h2 {
-    font-size: 20px;
-    margin: 40px -10px 0px 0px;
-    padding: 10px 10px 10px 15px;
+    font-size: 24px;
+    margin: 40px -10px 40px 0px;
+    padding: 15px 10px 15px 15px;
     color: rgb(51, 51, 51);
-    background: rgb(235, 233, 211);
+    background: #e3effb;
+    position: relative;
+    right: 5px;
 }
 
 .article-contents p {
     margin: 16px 0;
-    line-height: 25px;
+    line-height: 34px;
+    font-size: 17px;
 }
 
 .article-contents h3 {
-    margin: 25px 0px 0px;
-    font-size: 18px;
+    margin: 50px 0px 20px;
+    font-size: 22px;
 }
 
 .article-contents ul {
-    margin: 36px 0;
+  color: #668ad8;
+  border: dashed 2px #668ad8;
+  background: #f1f8ff;
+  padding: 0.5em 0.5em 0.5em 2em;
+  position: relative;
+  margin: 40px 0 70px;
 }
 
-.article-contents li {
-    padding-left: 20px;
-    margin: 10px 0;
-    position: relative;
-    line-height: 1.4;
+.article-contents ul li {
+  line-height: 1.5;
+  padding: 0.5em 0;
+  list-style-type: none!important;
+  margin-left: 10px;
 }
 
-.article-contents li:before {
-    border-radius: 50%;
-    width: 7px;
-    height: 7px;
-    background: #a09286;
-    top: .45em;
-    left: 1px;
-    position: absolute;
-    content: "";
-    display: inline-block;
+.article-contents ul li:before {
+  font-family: "Font Awesome 5 Free";
+  content: "✔︎";
+  position: absolute;
+  left : 1em;
+  color: #668ad8;
 }
+.article-contents ul li:after {
+  background: #2d8fdd;
+  color: #fff;
+  font-family: "Font Awesome 5 Free",'Avenir','Arial',sans-serif;
+  position: absolute;
+  left: -2px;
+  bottom: 100%;
+  padding: 1px 7px;
+  content: 'Check';
+  letter-spacing: 0.05em;
+  }
 
 .article-contents img {
     width: 100%;
@@ -386,6 +401,48 @@ html {
 
 .article-list-tag {
     overflow: hidden;
+}
+
+blockquote {
+    position: relative;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    font-style: italic;
+    color: #464646;
+    border: solid 3px #2d8fdd;
+}
+
+blockquote:before{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 0 0 30px;
+    vertical-align: middle;
+    content: "“";
+    font-family: FontAwesome;
+    background: #2d8fdd;
+    color: #FFF;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+blockquote p {
+    position: relative;
+    padding: 0;
+    margin: 10px 0;
+    z-index: 3;
+    line-height: 1.7;
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em;
 }
 
 .pagination {
