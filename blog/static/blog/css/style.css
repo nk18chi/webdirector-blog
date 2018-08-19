@@ -279,6 +279,10 @@ html {
   margin-left: 10px;
 }
 
+.article-contents ul li a {
+  text-decoration: underline;
+}
+
 .article-contents ul li:before {
   font-family: "Font Awesome 5 Free";
   content: "✔︎";
