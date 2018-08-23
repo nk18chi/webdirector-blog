@@ -315,9 +315,14 @@ html {
     padding: 5px 0;
 }
 
+.article-image-container {
+    text-align: center;
+}
+
 .article-contents img {
-    width: 100%;
+    width: auto;
     margin: 10px 0;
+    max-height: 400px;
 }
 
 pre.prettyprint {

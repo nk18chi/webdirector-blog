@@ -5,7 +5,7 @@ from .models import BlogPost
 
 class LatestEntriesFeed(Feed):
     title = "webディレクターブログ"
-    link = "http://127.0.0.1"
+    link = "https://webdirector-blog.com/"
     # description = "Updates on changes and additions to police beat central."
 
     def items(self):

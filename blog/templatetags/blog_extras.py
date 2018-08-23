@@ -67,7 +67,8 @@ def custom_html(value):
     text = re.sub('<h3>', r'</section><section><h3>', text)
     text = re.sub(r'^(.*?)</section><section><h3>', r'\1<section><h3>', text)
     text = re.sub('ahref="http', 'a href="http', text)
-    text = re.sub(r'<img src="(.*?)" alt=', r'<img src="/media/\1" alt=', text)
+    text = re.sub(r'<img src="(?!http)(.*?)"', r'<img src="/media/\1"', text)
+    text = re.sub(r'<img src=(.*?)>', r'<div class="article-image-container"><img src=\1></div>', text)
 
     # 最初のh1にclassを付与する
     text = re.sub(r'^(.*?)<h2>', r'\1<h2 class="init-h2">', text)

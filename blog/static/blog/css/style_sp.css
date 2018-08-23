@@ -266,6 +266,10 @@ html {
     padding: 5px 0;
 }
 
+.article-image-container {
+    text-align: center;
+}
+
 .article-contents img {
     width: 100%;
     margin: 10px 0;
