@@ -276,6 +276,7 @@ html {
     margin: 10px 0;
     width: auto;
     max-height: 350px;
+    max-width: 1000px;
 }
 
 pre.prettyprint {
