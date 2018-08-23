@@ -43,7 +43,7 @@ def trans_word(value):
 @register.filter()
 def convert_word(value):
     text = re.sub('@br@', '<br>', value)
-    text = re.sub(r'@code_m@(.*?)@code_m_e@', r'<code class="code-multi">\1</code>', text)
+    text = re.sub(r'@code_m@(.*?)@code_m_e@', r'<pre class="prettyprint"><code>\1</code></pre>', text)
     text = re.sub(r'@code_s@(.*?)@code_s_e@', r'<code class="code-simple">\1</code>', text)
     text = re.sub('@blockquote@', '<blockquote', text)
     text = re.sub('@e_blockquote@', '</blockquote>', text)

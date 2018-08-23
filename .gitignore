@@ -1,5 +1,5 @@
 .idea
-__pycache__
+__pycache__/
 /media
 /blog/static/blog/img/contents/
 /manage.py

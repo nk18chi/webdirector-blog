@@ -207,6 +207,7 @@ html {
     margin: 16px 0;
     font-size: 16px;
     line-height: 32px;
+    word-break: break-all;
 }
 
 .article-contents h3 {
@@ -252,9 +253,41 @@ html {
   letter-spacing: 0.05em;
   }
 
+.article-contents ol {
+    border-top: solid #1e366a 1px;
+    border-bottom: solid #1e366a 1px;
+    padding: 0.5em 0 0.5em 1.5em;
+    list-style: decimal;
+    margin-top: 15px;
+}
+
+.article-contents ol li {
+    line-height: 1.5;
+    padding: 5px 0;
+}
+
 .article-contents img {
     width: 100%;
     margin: 10px 0;
+}
+
+.article-contents img {
+    width: 100%;
+    margin: 10px 0;
+}
+
+pre.prettyprint {
+      padding: 10px 2px !important;
+      border: 1px solid #E1E1E8  !important;
+      display: block;
+      overflow: auto;
+      width: auto;
+      white-space: pre;
+      word-wrap: normal;
+      background-color: #F7F7F9;
+      font-size: 15px;
+      margin: 10px 0;
+      line-height: 24px;
 }
 
 .code-simple {
@@ -262,6 +295,7 @@ html {
     color: #d84e8b;
     padding: 2px 5px;
     border-radius: 5px;
+    font-size: 13px;
 }
 
 .code-multi {
