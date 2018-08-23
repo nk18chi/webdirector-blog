@@ -317,12 +317,15 @@ html {
 
 .article-image-container {
     text-align: center;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .article-contents img {
     width: auto;
     margin: 10px 0;
     max-height: 400px;
+    max-width: 1000px;
 }
 
 pre.prettyprint {

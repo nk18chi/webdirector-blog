@@ -268,11 +268,14 @@ html {
 
 .article-image-container {
     text-align: center;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .article-contents img {
-    width: 100%;
     margin: 10px 0;
+    width: auto;
+    max-height: 350px;
 }
 
 .article-contents img {
