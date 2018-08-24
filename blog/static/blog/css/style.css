@@ -190,12 +190,17 @@ html {
     overflow: hidden;
 }
 
+.article-detail {
+    overflow: hidden;
+    position: relative;
+    left: -8px;
+}
+
 .article-date {
     position: relative;
     top: 10px;
     border-left: 2px solid #000;
     padding: 4px 0px 4px 20px;
-    left: -8px;
     background: #333333;
     color: #fff;
     font-size: 15px;
@@ -216,13 +221,13 @@ html {
 
 .article-category {
     background-color: #ddd;
-    background: #3398e2;
+    background: #2a8fe0c4;
     color: #fff;
     font-size: 14px;
     padding: 4px 10px;
     float: right;
     position: relative;
-    top: -12px;
+    top: -13px;
     left: -5px;
     font-weight: bold;
 }
@@ -244,7 +249,7 @@ html {
 
 .article-contents h2 {
     font-size: 24px;
-    margin: 40px -10px 40px 0px;
+    margin: 40px -10px 20px 0px;
     padding: 15px 10px 15px 15px;
     color: rgb(51, 51, 51);
     background: #e3effb;
@@ -253,14 +258,14 @@ html {
 }
 
 .article-contents p {
-    margin: 16px 0;
-    line-height: 34px;
+    line-height: 36px;
     font-size: 17px;
     word-break: break-all;
+    margin-bottom: 60px;
 }
 
 .article-contents h3 {
-    margin: 50px 0px 20px;
+    margin: 30px 0px 20px;
     font-size: 22px;
 }
 
@@ -304,8 +309,6 @@ html {
   }
 
 .article-contents ol {
-    border-top: solid #1e366a 1px;
-    border-bottom: solid #1e366a 1px;
     padding: 0.5em 0 0.5em 1.5em;
     list-style: decimal;
 }
@@ -394,14 +397,14 @@ pre.prettyprint {
 
 
 .article-list-item {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     width: 700px;
     box-shadow: 0 0 4px #333333;
     border-radius: 3px;
 }
 
 .article-list-item:hover {
-    background: #F8F8FF;
+    background: #f8f8ff5c;
 }
 
 .article-list li a {
@@ -423,24 +426,36 @@ pre.prettyprint {
 
 .article-list-container {
     overflow: hidden;
-    margin: 20px;
-    padding-bottom: 40px;
+    margin: 5px 20px;
+    padding-bottom: 30px;
 }
 
 .article-list-container h2 {
-    font-size: 18px;
+    font-size: 20px;
     margin: 10px 10px 15px;
+    line-height: 34px;
 }
 
 .article-list-container img {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 100px;
+    max-height: 100px;
     float: left;
     margin-right: 20px;
 }
 
+.article-list-containersub {
+    overflow: hidden;
+}
+
+.article-thumbnail {
+    font-size: 15px;
+    line-height: 25px;
+    color: #777;
+}
+
 .article-list-tag {
     overflow: hidden;
+    margin-top: 10px;
 }
 
 blockquote {
@@ -450,6 +465,8 @@ blockquote {
     font-style: italic;
     color: #464646;
     border: solid 3px #2d8fdd;
+    margin-bottom: 60px;
+    margin-top: -50px;
 }
 
 blockquote:before{
@@ -473,7 +490,7 @@ blockquote:before{
 blockquote p {
     position: relative;
     padding: 0;
-    margin: 10px 0;
+    margin: 10px 0 !important;
     z-index: 3;
     line-height: 1.7;
 }

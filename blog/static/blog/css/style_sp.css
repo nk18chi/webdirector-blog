@@ -128,7 +128,7 @@ html {
 
 .google-ad {
     text-align: center;
-    margin: 10px 0px 0px;
+    margin: 15px 0px;
 }
 
 .container {
@@ -159,7 +159,7 @@ html {
 }
 
 .article-category {
-    background: #3398e2;
+    background: #2a8fe0c4;
     color: #fff;
     font-weight: bold;
     font-size: 12px;
@@ -206,8 +206,9 @@ html {
 .article-contents p {
     margin: 16px 0;
     font-size: 16px;
-    line-height: 32px;
+    line-height: 34px;
     word-break: break-all;
+    margin-bottom: 50px;
 }
 
 .article-contents h3 {
@@ -254,8 +255,6 @@ html {
   }
 
 .article-contents ol {
-    border-top: solid #1e366a 1px;
-    border-bottom: solid #1e366a 1px;
     padding: 0.5em 0 0.5em 1.5em;
     list-style: decimal;
     margin-top: 15px;
@@ -347,6 +346,7 @@ pre.prettyprint {
 
 .article-list-item {
     border-bottom: 1px solid #ccc;
+    padding: 0px 12px;
 }
 
 .article-list-item:hover {
@@ -379,24 +379,32 @@ pre.prettyprint {
 }
 
 .article-list-container h2 {
-    margin: 10px 0;
+    margin: 12px 0;
+    line-height: 28px;
+    font-size: 16px;
+    color: rgb(51, 51, 51);
 }
 
-.article-list-container img {
-    max-width: 120px;
-    max-height: 120px;
+.article-list-containersub {
+    overflow: hidden;
+}
+
+.article-list-containersub img {
+    max-width: 80px;
+    max-height: 80px;
     float: left;
     margin-right: 20px;
 }
 
 .article-thumbnail {
-    font-size: 14px;
+    font-size: 12px;
     color: #777;
+    line-height: 20px;
 }
 
 .article-list-tag {
     overflow: hidden;
-    margin-top: 8px;
+    margin-top: 12px;
 }
 
 blockquote {
@@ -406,6 +414,8 @@ blockquote {
     font-style: italic;
     color: #464646;
     border: solid 3px #2d8fdd;
+    margin-bottom: 50px;
+    margin-top: -40px;
 }
 
 blockquote:before{
@@ -432,6 +442,7 @@ blockquote p {
     margin: 10px 0;
     z-index: 3;
     line-height: 1.7;
+    margin-bottom: 16px !important;
 }
 
 blockquote cite {
@@ -563,10 +574,10 @@ blockquote cite {
     float: left;
     background: #434343;
     color: #fff !important;
-    font-size: 13px;
+    font-size: 12px;
     border-radius: 5px;
     margin: 0px 3px 5px;
-    padding: 5px 10px;
+    padding: 5px;
     display: block;
 }
 

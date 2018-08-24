@@ -27,7 +27,7 @@
         </div>
         {% include 'blog/includes/sns_button.html' %}
         <div class="article-contents">
-            {{ blogpost.content | trans_word | markdown | custom_html | convert_word | safe }}
+            {{ blogpost.content | markdown | custom_html | safe }}
         </div>
         <div class="article-taglist">
             <ul>
