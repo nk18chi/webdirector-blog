@@ -77,7 +77,8 @@ def custom_html(value):
     text = re.sub(r'^(.*?)<h2>', r'\1<h2 class="init-h2">', text)
 
     # code-prettifyを使うためにpreにclassをつける
-    text = re.sub(r'<pre>', r'<pre class="prettyprint">', text)
+    text = re.sub(r'<code>', r'<code class="code-simple">', text)
+    text = re.sub(r'<pre><code class="code-simple">', r'<pre class="prettyprint"><code>', text)
 
     return text
 
