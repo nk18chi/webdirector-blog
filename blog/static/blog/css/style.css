@@ -207,6 +207,10 @@ html {
     width: 140px;
 }
 
+.article-post .article-date {
+    left: -8px;
+}
+
 .article-date:before {
     content: "";
     position: absolute;
