@@ -1,6 +1,12 @@
-.idea
-*.pyc
+# Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*$py.class
+.idea
+
+# C extensions
+*.so
+
 /media
 /blog/static/blog/img/contents/
 /manage.py

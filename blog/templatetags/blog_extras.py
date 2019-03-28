@@ -58,16 +58,16 @@ def get_taglist():
 
 
 @register.filter()
-def custom_html(value):
+def custom_html(text):
     # sectionをつける
-    text = re.sub('<h2>', '</section><section><h2>', value) + '</section>'
+    text = re.sub('<h2>', '</section><section><h2>', text) + '</section>'
     text = re.sub(r'^</section>', '', text)
     text = re.sub('<h3>(.*?)</section>', r'<h3>\1</section></section>', text)
     text = re.sub('<h3>', r'</section><section><h3>', text)
     text = re.sub(r'^(.*?)</section><section><h3>', r'\1<section><h3>', text)
 
-    #ターゲットブランクにする
-    text = re.sub('a href=', 'a target="blank" href=', text)
+    #リンクをターゲットブランクにする、ただしindexはターゲットブランクにしない
+    text = re.sub('a href="http', 'a target="blank" href="http', text)
 
     # 画像の保存先を指定する
     text = re.sub(r'<img src="(?!http)(.*?)"', r'<img src="/media/\1"', text)

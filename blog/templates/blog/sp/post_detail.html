@@ -1,6 +1,5 @@
 {% extends "sp/base.html" %}
 {% load blog_extras %}
-{% load markdown_deux_tags %}
 
 {% block extrahead %}
 {% include 'blog/includes/og_meta.html' %}
@@ -18,7 +17,7 @@
         </div>
         {% include 'blog/includes/sns_button.html' %}
         <div class="article-contents">
-            {{ blogpost.content | markdown | custom_html | safe }}
+            {{ blogpost.text_to_markdown | custom_html | safe }}
         </div>
         <div class="article-taglist">
             <ul>

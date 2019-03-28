@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^nk-admin/', admin.site.urls),
     url(r'^api/', include(ideabank_router.urls)),
     url(r'^', include('blog.urls', namespace='blog')),
+    url('markdownx/', include('markdownx.urls'))
 ]

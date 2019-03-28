@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import BlogPost, BlogCategory, BlogTag, BlogPostTag, Image
+from markdownx.admin import MarkdownxModelAdmin
 
 
 class ImageAdmin(admin.ModelAdmin):
@@ -19,11 +20,10 @@ class BlogPostTagInline(admin.TabularInline):
     extra = 3
 
 
-class BlogPostAdmin(admin.ModelAdmin):
+class BlogPostAdmin(MarkdownxModelAdmin):
     list_display = ('id', 'title', 'status', 'created', 'category', 'image_square')
     list_display_links = ('id', 'title')
     inlines = [BlogPostTagInline]
-
 admin.site.register(BlogPost, BlogPostAdmin)
 
 

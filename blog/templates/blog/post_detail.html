@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load blog_extras %}
-{% load markdown_deux_tags %}
+
 
 {% block extrahead %}
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
@@ -27,7 +27,7 @@
         </div>
         {% include 'blog/includes/sns_button.html' %}
         <div class="article-contents">
-            {{ blogpost.content | markdown | custom_html | safe }}
+            {{ blogpost.text_to_markdown | custom_html | safe }}
         </div>
         <div class="article-taglist">
             <ul>

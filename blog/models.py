@@ -2,6 +2,8 @@ import os
 from datetime import datetime
 from django.db import models
 from django.conf import settings
+from markdownx.models import MarkdownxField
+from markdownx.utils import markdownify
 
 
 class BlogCategory(models.Model):
@@ -24,7 +26,7 @@ class Image(models.Model):
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=200)
-    content = models.TextField()
+    content = MarkdownxField('本文', help_text='Markdown形式で書いてください。')
     seo_description = models.TextField()
     status = models.IntegerField(default=1, choices=[(1, '下書き'), (2, '公開')])
     created = models.DateTimeField(editable=True, default=datetime.now)
@@ -34,6 +36,9 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
+
+    def text_to_markdown(self):
+        return markdownify(self.content)
 
 
 class BlogTag(models.Model):

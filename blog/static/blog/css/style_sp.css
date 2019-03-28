@@ -255,6 +255,50 @@ html {
   letter-spacing: 0.05em;
   }
 
+  .toc {
+      margin-top: 50px;
+      border: solid 2px #668ad8;
+      position: relative;
+  }
+
+  .toc:before {
+    font-family: "Font Awesome 5 Free",'Avenir','Arial',sans-serif;
+    content: 'Index';
+    color: #fff;
+    background: #2d8fdd;
+    left: -2px;
+    bottom: 100%;
+    padding: 4px 7px;
+    position: absolute;
+  }
+
+  .toc ul {
+      background: none;
+      border: none;
+      margin: 0;
+      padding: 8px 30px;
+  }
+
+  .toc ul li {
+      line-height: 1.2;
+      padding: 6px;
+      list-style-type: disc!important;
+      margin-left: 10px;
+  }
+
+  .toc ul li a {
+      text-decoration: underline;
+      color: #5b80b2;
+  }
+
+  .toc ul li:before {
+      content: none;
+  }
+
+  .toc ul li:after {
+      content: none;
+  }
+
 .article-contents ol {
     padding: 0.5em 0 0.5em 1.5em;
     list-style: decimal;
@@ -277,6 +321,7 @@ html {
     width: auto;
     max-height: 350px;
     max-width: 1000px;
+    margin-top: -40px;
 }
 
 pre.prettyprint {
@@ -289,9 +334,9 @@ pre.prettyprint {
       word-wrap: normal;
       background-color: #F7F7F9;
       font-size: 15px;
-      margin: 10px 0;
       line-height: 24px;
       margin-top: -40px;
+      margin-bottom: 50px;
 }
 
 .code-simple {
