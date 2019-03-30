@@ -60,21 +60,18 @@ def get_taglist():
 @register.filter()
 def custom_html(text):
     # sectionをつける
-    text = re.sub('<h2>', '</section><section><h2>', text) + '</section>'
+    text = re.sub('<h2(.*?)>', r'</section><section><h2\1>', text) + '</section>'
     text = re.sub(r'^</section>', '', text)
-    text = re.sub('<h3>(.*?)</section>', r'<h3>\1</section></section>', text)
-    text = re.sub('<h3>', r'</section><section><h3>', text)
-    text = re.sub(r'^(.*?)</section><section><h3>', r'\1<section><h3>', text)
+    text = re.sub('<h3(.*?)>(.*?)</section>', r'<h3\1>\2</section></section>', text)
+    text = re.sub('<h3(.*?)>', r'</section><section><h3\1>', text)
+    text = re.sub(r'^(.*?)</section><section><h3(.*?)>', r'\1<section><h3\1>', text)
 
     #リンクをターゲットブランクにする、ただしindexはターゲットブランクにしない
     text = re.sub('a href="http', 'a target="blank" href="http', text)
 
     # 画像の保存先を指定する
-    text = re.sub(r'<img src="(?!http)(.*?)"', r'<img src="/media/\1"', text)
-    text = re.sub(r'<img src=(.*?)>', r'<div class="article-image-container"><img src=\1></div>', text)
-
-    # 最初のh2にclassを付与する。cssを変えるため
-    text = re.sub(r'^(.*?)<h2>', r'\1<h2 class="init-h2">', text)
+    text = re.sub(r'<img(.*?)src="(?!http)(.*?)"', r'<img\1src="/media/\2"', text)
+    text = re.sub(r'<img(.*?)src=(.*?)>', r'<div class="article-image-container"><img\1src=\2></div>', text)
 
     # code-prettifyを使うためにpreにclassをつける
     text = re.sub(r'<code>', r'<code class="code-simple">', text)
