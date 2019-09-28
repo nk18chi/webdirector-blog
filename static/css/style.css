@@ -134,22 +134,8 @@ html {
   font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
 }
 
-.site-about-img,
-.contact-img {
-    width: 30px;
-    height: 34px;
-    display: inline-block;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-}
-
-.site-about-img {
-    background-image: url("/static/img/question.png");
-}
-
-.contact-img {
-    background-image: url("/static/img/mail.png");
+.margin-right-5px {
+  margin-right: 5px;
 }
 
 /*  ------------------- all css end ------------------- */
@@ -205,13 +191,19 @@ html {
 
   .site-navi {
     float: right;
-    padding: 20px 0;
+    padding: 28px 0;
   }
 
   .site-about li {
     float: left;
     margin: 0 20px;
     font-size: 12px;
+  }
+
+  .site-about li a {
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
   }
 
   .category-wrap {

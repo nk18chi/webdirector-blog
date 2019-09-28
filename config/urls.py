@@ -11,8 +11,6 @@ urlpatterns = [
     url(r'^$', blog_views.TopView.as_view(), name='top'),
     url(r'^nk-admin/', admin.site.urls),
 
-    url(r'^privacy/', TemplateView.as_view(template_name="static/privacy.html"), name='privacy'),
-    url(r'^about/$', TemplateView.as_view(template_name='about.html'), name='about'),
     url(r'^contact/$', blog_views.ContactView.as_view(template_name='contact.html'), name='contact'),
     url(r'^contact/finish/$', TemplateView.as_view(template_name='contact_finish.html')),
     url(r'^contact/finish/sp/$',

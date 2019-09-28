@@ -12,6 +12,10 @@
 <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css"
+        type="text/css" media="all" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
     <link rel="shortcut icon" type="image/x-icon" href="{% static "img/logo_icon.png" %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,10 +40,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
         <nav class="site-navi pc-display">
-            <ul class="site-about">
-                <li><a href="{% url 'about' %}"><span class="site-about-img"></span>webディレクターブログとは？</a></li>
-                <li><a href="{% url 'contact' %}"><span class="contact-img"></span>お問い合わせ</a></li>
-            </ul>
+            {% include 'blog/components/site-navi.html' %}
         </nav>
     </div>
 
@@ -121,8 +122,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <nav class="site-navi sp-display">
         <ul class="site-about">
-            <li><a href="/about/"><span class="site-about-img"></span>webディレクターブログとは？</a></li>
-            <li><a href="/contact/"><span class="contact-img"></span>お問い合わせ</a></li>
+            {% include 'blog/components/site-navi.html' %}
         </ul>
     </nav>
     <div class="rights-reserved">
