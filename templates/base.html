@@ -36,7 +36,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="site-name">
             <div class="logo">
                 <img src="{% static "img/logo.png" %}" alt="webディレクター ロゴ">
-                <a href="{% url 'top' %}"><p>webディレクターブログ</p></a>
+                <p><a href="{% url 'top' %}">webディレクターブログ</a></p>
             </div>
         </div>
         <nav class="site-navi pc-display">
@@ -53,7 +53,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="container">
     <div class="main-content">
-        <ol class="breadcrumbs">
+        <ol class="breadcrumbs pc-display">
             {% block breadcrumbs %}{% endblock %}
         </ol>
 

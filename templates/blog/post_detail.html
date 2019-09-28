@@ -37,7 +37,9 @@
         <div class="article-taglist">
             <ul>
                 {% for bpt in blogpost.blogposttag_set.all %}
-                <li><a href="{% url 'blog:tag_search' tag_id=bpt.tag_id %}">{{ bpt.tag.name }}</a></li>
+                    <li>
+                        <a href="{% url 'blog:tag_search' tag_id=bpt.tag_id %}">{{ bpt.tag.name }}</a>
+                    </li>
                 {% endfor %}
             </ul>
         </div>

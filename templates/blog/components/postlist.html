@@ -2,23 +2,23 @@
 
 {% for post in latest_post_list %}
     <li class="article-list-item">
-        <a href="{% url 'blog:post_detail' category_id=post.category_id pk=post.id %}">
-            <div class="article-detail">
-              <p class="article-date">{{ post.created | date_format }}</p>
-              <p class="article-category">{{ post.category.name }}</p>
+        <div class="article-detail">
+            <span class="article-date">{{ post.created | date_format }}</span>
+            <span class="article-category">{{ post.category.name }}</span>
+        </div>
+        <div class="article-list-container">
+            <h2><a href="{% url 'blog:post_detail' category_id=post.category_id pk=post.id %}">{{ post.title }}</a></h2>
+            <div class="article-list-containersub">
+                <div class="image-square">
+                    <img src="/media/{{ post.image_square.image }}" alt="{{ post.image_square.name }}">
+                </div>
+                <p class="article-thumbnail">{{ post.seo_description | limit_text:140 }}</p>
             </div>
-            <div class="article-list-container">
-                    <h2>{{ post.title }}</h2>
-                    <div class="article-list-containersub">
-                      <img src="/media/{{ post.image_square.image }}" alt="{{ post.image_square.name }}">
-                      <p class="article-thumbnail">{{ post.seo_description | limit_text:140 }}</p>
-                    </div>
-                    <ul class="article-list-tag">
-                        {% for bpt in post.blogposttag_set.all %}
-                            <li class="tag-list">{{ bpt.tag.name }}</li>
-                        {% endfor %}
-                    </ul>
-            </div>
-        </a>
+            <ul class="article-list-tag">
+                {% for bpt in post.blogposttag_set.all %}
+                    <li class="tag-list">{{ bpt.tag.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
     </li>
 {% endfor %}

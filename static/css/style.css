@@ -138,6 +138,21 @@ html {
   margin-right: 5px;
 }
 
+.logo {
+  position: relative;
+}
+
+.logo a:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  pointer-events: auto;
+  content: "";
+}
+
 /*  ------------------- all css end ------------------- */
 
 /*  ------------------- pc css start ------------------- */
@@ -169,24 +184,15 @@ html {
   .site-name p {
     margin: 0;
     font-size: 18px;
-    color: #555;
     font-weight: bold;
+  }
+
+  .site-name a {
+    color: #555;
   }
 
   .logo {
     text-align: center;
-    position: relative;
-  }
-
-  .logo a:after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 3;
-    pointer-events: auto;
-    content: "";
   }
 
   .site-navi {
@@ -302,6 +308,7 @@ html {
   }
 
   .article-detail {
+    height: 40px;
     overflow: hidden;
     position: relative;
     left: -8px;
@@ -309,9 +316,9 @@ html {
 
   .article-date {
     position: relative;
-    top: 10px;
+    top: 12px;
     border-left: 2px solid #000;
-    padding: 4px 0px 4px 20px;
+    padding: 4px 12px 4px 20px;
     background: #333333;
     color: #fff;
     font-size: 15px;
@@ -342,7 +349,7 @@ html {
     padding: 4px 10px;
     float: right;
     position: relative;
-    top: -13px;
+    top: 8px;
     left: -5px;
     font-weight: bold;
   }
@@ -561,6 +568,7 @@ html {
     width: 700px;
     box-shadow: 0 0 4px #333333;
     border-radius: 3px;
+    position: relative;
   }
 
   .article-list-item:hover {
@@ -587,20 +595,38 @@ html {
   .article-list-container {
     overflow: hidden;
     margin: 5px 20px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
   }
 
   .article-list-container h2 {
     font-size: 20px;
-    margin: 10px 10px 15px;
+    margin: 0px 10px 15px;
     line-height: 34px;
   }
 
-  .article-list-container img {
-    max-width: 100px;
-    max-height: 100px;
+  .article-list-container a:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    pointer-events: auto;
+    content: "";
+  }
+
+  .image-square {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
     float: left;
-    margin-right: 20px;
+    vertical-align: middle;
+    margin: 0px 20px 0px 0;
+  }
+
+  .article-list-container img {
+    min-height: 100%;
+    width: 100%;
   }
 
   .article-list-containersub {
@@ -732,21 +758,30 @@ html {
     border-bottom: 1px solid #ccc;
   }
 
-  .sidebar-article-list li a {
-    display: block;
-    padding: 10px 0;
-  }
-
-  .sidebar-article-list li a img {
+  .image-mini-square {
     width: 60px;
+    height: 60px;
+    overflow: hidden;
     float: left;
-    margin-right: 20px;
+    vertical-align: middle;
+    margin: 15px 20px 15px 0;
   }
 
-  .sidebar-article-list li a p {
-    display: table-cell;
+  .sidebar-article-list li img {
+    min-height: 100%;
+    width: 100%;
+  }
+
+  .sidebar-article-list li p {
     vertical-align: middle;
     font-size: 14px;
+    height: auto;
+    line-height: 20px;
+  }
+
+  .sidebar-article-list li a {
+    display: block;
+    padding: 15px 0;
     height: 60px;
   }
 
