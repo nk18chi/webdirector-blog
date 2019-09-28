@@ -10,5 +10,4 @@ __pycache__/
 *.so
 
 /media
-/blog/static/blog/img/contents/
 /manage.py
