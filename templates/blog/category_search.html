@@ -5,7 +5,7 @@
 
 {% block breadcrumbs %}
 {% if blogcategory %}
-<li><a href="{% url 'blog:top' %}">Home</a><span class="arrow"></span></li>
+<li><a href="{% url 'top' %}">Home</a><span class="arrow"></span></li>
 <li><a href="">{{ blogcategory.name }}</a></li>
 {% endif %}
 {% endblock breadcrumbs %}

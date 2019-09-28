@@ -15,7 +15,7 @@ from django.shortcuts import get_object_or_404
 
 
 class BlogPostFeed(Feed):
-    title = "My articles"
+    title = "webdirector-blog feed list"
     description_template = "feeds/blogpost.html"
 
     def items(self):
@@ -63,7 +63,8 @@ class CategoryListView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CategoryListView, self).get_context_data(**kwargs)
-        context['blogcategory'] = BlogCategory.objects.get(pk=self.kwargs['category_id'])
+        context['blogcategory'] = BlogCategory.objects.get(
+            pk=self.kwargs['category_id'])
         return context
 
     def get_queryset(self):
@@ -113,18 +114,9 @@ class BlogPostView(generic.DetailView):
     def get_context_data(self, **kwargs):
 
         context = super(BlogPostView, self).get_context_data(**kwargs)
-        context['blogcategory'] = BlogCategory.objects.get(pk=self.kwargs['category_id'])
+        context['blogcategory'] = BlogCategory.objects.get(
+            pk=self.kwargs['category_id'])
         return context
-
-
-class AboutPostView(TemplateView):
-
-    def get_template_names(self):
-        template_name = 'about.html'
-        device = ''
-        if parse(self.request.META['HTTP_USER_AGENT']).is_mobile:
-            device = 'sp/'
-        return device + template_name
 
 
 class ContactView(FormView):

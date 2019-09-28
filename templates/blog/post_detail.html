@@ -12,7 +12,7 @@
 
 {% block breadcrumbs %}
 {% if blogcategory %}
-<li><a href="{% url 'blog:top' %}">Home</a><span class="arrow"></span></li>
+<li><a href="{% url 'top' %}">Home</a><span class="arrow"></span></li>
 <li><a href="{% url 'blog:category_search' category_id=blogcategory.id %}">{{ blogcategory.name }}</a><span class="arrow"></span></li>
 <li><a href="">{{ blogpost.title }}</a></li>
 {% endif %}
