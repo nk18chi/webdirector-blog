@@ -1,3 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}webディレクターブログとは？ - webディレクターブログ{% endblock %}
+
+{% block breadcrumbs %}
+<li><a href="{% url 'top' %}">Home</a><span class="arrow"></span></li>
+<li><a href="">webディレクターブログとは？</a></li>
+{% endblock breadcrumbs %}
+
+{% block content %}
 <article class="article article-post">
     <div class="article-date">2018年1月1日</div>
     <section class="article-container">
@@ -31,8 +41,9 @@
             <p>※GoogleAnalyticsやAdwordsはAPI使って自動レポート機能作成もしてました。</p>
             <h3>ポートフォリオ</h3>
             <ul>
-                <li><a href="http://webdirector-blog.com/">webディレクターブログ</a></li>
+                <li><a href="{% url 'top' %}">webディレクターブログ</a></li>
             </ul>
         </div>
     </section>
 </article>
+{% endblock content %}

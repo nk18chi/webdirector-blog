@@ -4,20 +4,23 @@
 <html lang="{{ LANGUAGE_CODE|default:'ja' }}">
 <head>
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-THD3LJ');</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-THD3LJ');</script>
 <!-- End Google Tag Manager -->
-<meta charset="UTF-8">
-<title>{% block title %}{% endblock %}</title>
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
-<link rel="shortcut icon" type="image/x-icon" href="{% static "img/logo_icon.png" %}">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="{% block meta_description %}{% endblock %}">
-{% block extrahead %}{% endblock %}
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "img/logo_icon.png" %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+
+    {% block extrahead %}{% endblock %}
+
 </head>
+
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THD3LJ"
@@ -25,30 +28,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <header class="header">
-<div class="header-wrap">
-<div class="site-name">
-<a href="/">
-<div class="logo">
-    <img src="{% static "img/logo.png" %}" alt="webディレクター ロゴ">
-</div>
-<p>webディレクターブログ</p>
-</a>
-</div>
+    <div class="header-wrap">
+        <div class="site-name">
+            <div class="logo">
+                <img src="{% static "img/logo.png" %}" alt="webディレクター ロゴ">
+                <a href="{% url 'top' %}"><p>webディレクターブログ</p></a>
+            </div>
+        </div>
+        <nav class="site-navi pc-display">
+            <ul class="site-about">
+                <li><a href="{% url 'about' %}"><span class="site-about-img"></span>webディレクターブログとは？</a></li>
+                <li><a href="{% url 'contact' %}"><span class="contact-img"></span>お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </div>
 
-<nav class="site-navi">
-    <ul class="site-about">
-        <li><a href="{% url 'about' %}">webディレクターブログとは？</a></li>
-        <li><a href="{% url 'contact' %}">問い合わせ</a></li>
-    </ul>
-</nav>
-</div>
-
-
-<div class="category-wrap">
-<nav class="category-navi">
-{% get_blogcategory %}
-</nav>
-</div>
+    <div class="category-wrap">
+        <nav class="category-navi">
+            {% get_blogcategory %}
+        </nav>
+    </div>
 </header>
 
 <div class="container">
@@ -62,76 +61,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         {% endblock %}
 
         <div class="sidebar">
-        <div class="google-ad">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- webdirector-blog_pc_sidebar_top -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8066096747233555"
-                 data-ad-slot="1328901539"
-                 data-ad-format="auto"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-        <!--<div class="sidebar-article-list">-->
-            <!--<p class="sidebar-headline">人気記事</p>-->
-            <!--<ul>-->
-                <!--<li>-->
-                    <!--<a href="">-->
-                        <!--<img width="60" height="60" src="http://webdirector-blog.com/wp-content/uploads/2015/09/-2015-09-24-1.57.42-e1443061154950-150x150.png" class="left wp-post-image" alt="スクリーンショット 2015-09-24 1.57.42">-->
-                        <!--<p>テスト</p>-->
-                    <!--</a>-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--<a href="">-->
-                        <!--<img width="60" height="60" src="http://webdirector-blog.com/wp-content/uploads/2015/09/-2015-09-24-1.57.42-e1443061154950-150x150.png" class="left wp-post-image" alt="スクリーンショット 2015-09-24 1.57.42">-->
-                        <!--<p>テスト</p>-->
-                    <!--</a>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</div>-->
-        {% get_latestbloglist %}
-        <!--<div class="search-in-site">-->
-            <!--<p class="sidebar-headline">サイト内検索</p>-->
-            <!--<form method="get" class="searchform" action="">-->
-                <!--<input type="text" class="searchform-box" name="s" id="search_box" value="" placeholder="例）blog">-->
-                <!--<input type="submit" name="submit" class="searchform-submit" value="検索">-->
-            <!--</form>-->
-        <!--</div>-->
-        <div class="sidebar-tag-list">
-            <p class="sidebar-headline">タグリスト</p>
-            {% get_taglist %}
-        </div>
-        <div>
-            <p class="sidebar-headline">SNSフォロー</p>
-            <nav class="social-list">
-                <ul class="icon-navigation">
-                    <li><a href="https://twitter.com/naoki_web"><img src="{% static "img/tw_mono.png" %}" alt="twitter" class="icon-image"></a></li>
-                    <li><a href="https://www.facebook.com/webdirectorblog/"><img src="{% static "img/fb_mono.png" %}" alt="facebook" class="icon-image"></a></li>
-                    <li><a href="http://b.hatena.ne.jp/entrylist?url=http%3A%2F%2Fwebdirector-blog.com%2F"><img src="{% static "img/hatebu_mono.png" %}" alt="hatebu" class="icon-image"></a></li>
-                    <li><a href="{% url 'feeds' %}"><img src="{% static "img/rss_mono.png" %}" alt="rss" class="icon-image"></a></li>
-                </ul>
-            </nav>
-        </div>
-        <div>
-            <p class="sidebar-headline">Twitterタイムライン</p>
-            <a class="twitter-timeline" height="700px" href="https://twitter.com/naoki_web?ref_src=twsrc%5Etfw">Tweets by naoki_web</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-        <div class="google-ad">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- webdirector-blog_pc_sidebar_botttom -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8066096747233555"
-                 data-ad-slot="9945758155"
-                 data-ad-format="auto"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            <div class="google-ad">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- webdirector-blog_pc_sidebar_top -->
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-8066096747233555"
+                    data-ad-slot="1328901539"
+                    data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            {% get_latestbloglist %}
+
+            <div class="sidebar-tag-list">
+                <p class="sidebar-headline">タグリスト</p>
+                {% get_taglist %}
+            </div>
+
+            <div>
+                <p class="sidebar-headline">SNSフォロー</p>
+                <nav class="social-list">
+                    <ul class="icon-navigation">
+                        <li><a href="https://twitter.com/naoki_web"><img src="{% static "img/tw_mono.png" %}" alt="twitter" class="icon-image"></a></li>
+                        <li><a href="https://www.facebook.com/webdirectorblog/"><img src="{% static "img/fb_mono.png" %}" alt="facebook" class="icon-image"></a></li>
+                        <li><a href="http://b.hatena.ne.jp/entrylist?url=http%3A%2F%2Fwebdirector-blog.com%2F"><img src="{% static "img/hatebu_mono.png" %}" alt="hatebu" class="icon-image"></a></li>
+                        <li><a href="{% url 'feeds' %}"><img src="{% static "img/rss_mono.png" %}" alt="rss" class="icon-image"></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div>
+                <p class="sidebar-headline">Twitterタイムライン</p>
+                <a class="twitter-timeline" height="700px" href="https://twitter.com/naoki_web?ref_src=twsrc%5Etfw">Tweets by naoki_web</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 <footer class="footer">
@@ -140,7 +107,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="footer-headline">プロフィール</p>
             <img src="{% static "img/duck.png" %}" alt="webディレクター プロフィール画像">
             <div class="profile-contents">
-                {% include 'blog/includes/profile.html' %}
+                <p class="name"><a href="https://twitter.com/naoki_web">webディレクタブログの中の人</a></p>
+                <ul>
+                    <li>webサービスを作ってるのが楽しい人</li>
+                    <li>ブログはマイペースに更新しています。</li>
+                </ul>
             </div>
         </div>
         <div class="footer-tag-list">
@@ -148,9 +119,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             {% get_taglist %}
         </div>
     </div>
-<div class="rights-reserved">
-    <p>© 2014 webdirector-blog All Rights Reserved.</p>
-</div>
+    <nav class="site-navi sp-display">
+        <ul class="site-about">
+            <li><a href="/about/"><span class="site-about-img"></span>webディレクターブログとは？</a></li>
+            <li><a href="/contact/"><span class="contact-img"></span>お問い合わせ</a></li>
+        </ul>
+    </nav>
+    <div class="rights-reserved">
+        <p>© 2014 webdirector-blog All Rights Reserved.</p>
+    </div>
 </footer>
 
 </body>

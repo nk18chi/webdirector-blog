@@ -12,9 +12,9 @@
 <article class="article">
     {% if latest_post_list %}
         <ul class="article-list">
-        {% include 'blog/includes/postlist.html' %}
+        {% include 'blog/components/postlist.html' %}
         </ul>
-        {% include 'blog/includes/pagination.html' %}
+        {% include 'blog/components/pagination.html' %}
     {% else %}
         <p>記事がありません。</p>
     {% endif %}

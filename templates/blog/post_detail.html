@@ -4,7 +4,12 @@
 
 {% block extrahead %}
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-{% include 'blog/includes/og_meta.html' %}
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@naoki_web" />
+<meta property="og:url" content="" />
+<meta property="og:title" content="{{ blogpost.title }}" />
+<meta property="og:description" content="{{ blogpost.seo_description }}" />
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}/media/{{ blogpost.image_square.image }}" />
 {% endblock %}
 
 {% block title %}{{ blogpost.title }} - webディレクターブログ{% endblock %}
@@ -25,7 +30,7 @@
         <div class="article-h1">
             <h1 class="article-title">{{ blogpost.title }}</h1>
         </div>
-        {% include 'blog/includes/sns_button.html' %}
+        {% include 'blog/components/sns_button.html' %}
         <div class="article-contents">
             {{ blogpost.text_to_markdown | custom_html | safe }}
         </div>
@@ -36,7 +41,7 @@
                 {% endfor %}
             </ul>
         </div>
-        {% include 'blog/includes/sns_button.html' %}
+        {% include 'blog/components/sns_button.html' %}
     </div>
     </article>
 {% endblock content %}

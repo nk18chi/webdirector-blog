@@ -1,3 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}問い合わせ - webディレクターブログ{% endblock %}
+
+{% block breadcrumbs %}
+<li><a href="{% url 'top' %}">Home</a><span class="arrow"></span></li>
+<li><a href="">問い合わせ</a></li>
+{% endblock breadcrumbs %}
+
+{% block content %}
 <article class="article">
 <h1 class="article-list-h1">問い合わせ</h1>
 <div class="article-list-h1description"></div>
@@ -26,3 +36,4 @@
     <div class="contact-submit-container"><input type='submit' value='送信する' class="contact-submit"></div>
 </form>
 </article>
+{% endblock content %}
