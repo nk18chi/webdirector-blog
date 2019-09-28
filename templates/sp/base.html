@@ -14,7 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <title>{% block title %}{% endblock %}</title>
 <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style_sp.css' %}" />
-<link rel="shortcut icon" type="image/x-icon" href="{% static "blog/img/profile.png" %}">
+<link rel="shortcut icon" type="image/x-icon" href="{% static "img/profile.png" %}">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1">
 <meta name="description" content="{% block meta_description %}{% endblock %}">
 {% block extrahead %}{% endblock %}
@@ -30,7 +30,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="site-name">
 <a href="/">
 <div class="logo">
-    <img src="{% static "blog/img/logo.png" %}" alt="webディレクター ロゴ">
+    <img src="{% static "img/logo.png" %}" alt="webディレクター ロゴ">
 </div>
 <p>webディレクターブログ</p>
 </a>
@@ -85,10 +85,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="sidebar-headline">SNSフォロー</p>
             <nav class="social-list">
                 <ul class="icon-navigation">
-                    <li><a href="https://twitter.com/Webdirectorblog"><img src="{% static "blog/img/tw_mono.png" %}" alt="twitter" class="icon-image"></a></li>
-                    <li><a href="https://www.facebook.com/webdirectorblog/"><img src="{% static "blog/img/fb_mono.png" %}" alt="facebook" class="icon-image"></a></li>
-                    <li><a href="http://b.hatena.ne.jp/entrylist?url=http%3A%2F%2Fwebdirector-blog.com%2F"><img src="{% static "blog/img/hatebu_mono.png" %}" alt="hatebu" class="icon-image"></a></li>
-                    <li><a href="{% url 'blog:feeds' %}"><img src="{% static "blog/img/rss_mono.png" %}" alt="rss" class="icon-image"></a></li>
+                    <li><a href="https://twitter.com/Webdirectorblog"><img src="{% static "img/tw_mono.png" %}" alt="twitter" class="icon-image"></a></li>
+                    <li><a href="https://www.facebook.com/webdirectorblog/"><img src="{% static "img/fb_mono.png" %}" alt="facebook" class="icon-image"></a></li>
+                    <li><a href="http://b.hatena.ne.jp/entrylist?url=http%3A%2F%2Fwebdirector-blog.com%2F"><img src="{% static "img/hatebu_mono.png" %}" alt="hatebu" class="icon-image"></a></li>
+                    <li><a href="{% url 'blog:feeds' %}"><img src="{% static "img/rss_mono.png" %}" alt="rss" class="icon-image"></a></li>
                 </ul>
             </nav>
         </div>
@@ -111,7 +111,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-contents">
         <div class="profile">
             <p class="footer-headline">プロフィール</p>
-            <img src="{% static "blog/img/duck.png" %}" alt="webディレクター プロフィール画像">
+            <img src="{% static "img/duck.png" %}" alt="webディレクター プロフィール画像">
             <div class="profile-contents">
                 {% include 'blog/includes/profile.html' %}
             </div>
