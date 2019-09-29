@@ -1,5 +1,6 @@
 from django import template
 from blog.models import BlogCategory, BlogPost, BlogTag
+from user_agents import parse
 import re
 
 register = template.Library()
@@ -55,8 +56,13 @@ def custom_html(text):
 
 
 @register.filter()
-def limit_text(str, int):
-    return str[:int]+'...'
+def limit_text(str, ua_agent):
+
+    extract_number = 140
+    if parse(ua_agent).is_mobile:
+        extract_number = 80
+
+    return str[:extract_number]+'...'
 
 
 @register.filter()

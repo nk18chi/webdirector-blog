@@ -12,7 +12,7 @@
                 <div class="image-square">
                     <img src="/media/{{ post.image_square.image }}" alt="{{ post.image_square.name }}">
                 </div>
-                <p class="article-thumbnail">{{ post.seo_description | limit_text:140 }}</p>
+                <p class="article-thumbnail">{{ post.seo_description | limit_text:request.META.HTTP_USER_AGENT }}</p>
             </div>
             <ul class="article-list-tag">
                 {% for bpt in post.blogposttag_set.all %}

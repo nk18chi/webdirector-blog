@@ -82,17 +82,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 {% get_taglist %}
             </div>
 
-            <div>
+            {% comment %} <div>
                 <p class="sidebar-headline">SNSフォロー</p>
                 <nav class="social-list">
                     <ul class="icon-navigation">
-                        <li><a href="https://twitter.com/naoki_web"><img src="{% static "img/tw_mono.png" %}" alt="twitter" class="icon-image"></a></li>
-                        <li><a href="https://www.facebook.com/webdirectorblog/"><img src="{% static "img/fb_mono.png" %}" alt="facebook" class="icon-image"></a></li>
-                        <li><a href="http://b.hatena.ne.jp/entrylist?url=http%3A%2F%2Fwebdirector-blog.com%2F"><img src="{% static "img/hatebu_mono.png" %}" alt="hatebu" class="icon-image"></a></li>
-                        <li><a href="{% url 'feeds' %}"><img src="{% static "img/rss_mono.png" %}" alt="rss" class="icon-image"></a></li>
+                        <li><a href="https://twitter.com/naoki_web"><i class="fab fa-twitter-square fa-4x"></i></a></li>
+                        <li><a href="https://www.facebook.com/webdirectorblog/"><i class="fab fa-facebook fa-4x fa-facebook-square"></i></a></li>
+                        <li><a href="http://b.hatena.ne.jp/entrylist?url=http%3A%2F%2Fwebdirector-blog.com%2F"><img src="{% static "img/hatebu_2.png" %}" alt="hatebu" class="icon-image"></a></li>
+                        <li><a href="{% url 'feeds' %}"><i class="fas fa-rss-square fa-4x"></i></a></li>
                     </ul>
                 </nav>
-            </div>
+            </div> {% endcomment %}
 
             <div>
                 <p class="sidebar-headline">Twitterタイムライン</p>
@@ -110,7 +110,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="profile-contents">
                 <p class="name"><a href="https://twitter.com/naoki_web">webディレクタブログの中の人</a></p>
                 <ul>
-                    <li>webサービスを作ってるのが楽しい人</li>
+                    <li>個人サービスを作ることが好き。</li>
                     <li>ブログはマイペースに更新しています。</li>
                 </ul>
             </div>
