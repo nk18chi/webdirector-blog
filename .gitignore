@@ -2,11 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
-.idea
+.vscode
+*.log
+*.pot
 
 # C extensions
 *.so
 
 /media
-/blog/static/blog/img/contents/
 /manage.py

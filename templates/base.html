@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% load static %}
+{% load blog_extras %}
+<html lang="{{ LANGUAGE_CODE|default:'ja' }}">
+<head>
+<!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-THD3LJ');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css"
+        type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "img/logo_icon.png" %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+
+    {% block extrahead %}{% endblock %}
+
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THD3LJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="header">
+    <div class="header-wrap">
+        <div class="site-name">
+            <div class="logo">
+                <img src="{% static "img/logo.png" %}" alt="webディレクター ロゴ">
+                <p><a href="{% url 'top' %}">webディレクターブログ</a></p>
+            </div>
+        </div>
+        <nav class="site-navi pc-display">
+            {% include 'blog/components/site-navi.html' %}
+        </nav>
+    </div>
+
+    <div class="category-wrap">
+        <nav class="category-navi">
+            {% get_blogcategory %}
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <div class="main-content">
+        <ol class="breadcrumbs pc-display">
+            {% block breadcrumbs %}{% endblock %}
+        </ol>
+
+        {% block content %}
+          {{ content }}
+        {% endblock %}
+
+        <div class="sidebar">
+            <div class="google-ad">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- webdirector-blog_pc_sidebar_top -->
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-8066096747233555"
+                    data-ad-slot="1328901539"
+                    data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            {% get_latestbloglist %}
+
+            <div class="sidebar-tag-list">
+                <p class="sidebar-headline">タグリスト</p>
+                {% get_taglist %}
+            </div>
+
+            {% comment %} <div>
+                <p class="sidebar-headline">SNSフォロー</p>
+                <nav class="social-list">
+                    <ul class="icon-navigation">
+                        <li><a href="https://twitter.com/naoki_web"><i class="fab fa-twitter-square fa-4x"></i></a></li>
+                        <li><a href="https://www.facebook.com/webdirectorblog/"><i class="fab fa-facebook fa-4x fa-facebook-square"></i></a></li>
+                        <li><a href="http://b.hatena.ne.jp/entrylist?url=http%3A%2F%2Fwebdirector-blog.com%2F"><img src="{% static "img/hatebu_2.png" %}" alt="hatebu" class="icon-image"></a></li>
+                        <li><a href="{% url 'feeds' %}"><i class="fas fa-rss-square fa-4x"></i></a></li>
+                    </ul>
+                </nav>
+            </div> {% endcomment %}
+
+            <div>
+                <p class="sidebar-headline">Twitterタイムライン</p>
+                <a class="twitter-timeline" height="700px" href="https://twitter.com/naoki_web?ref_src=twsrc%5Etfw">Tweets by naoki_web</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-contents">
+        <div class="profile">
+            <p class="footer-headline">プロフィール</p>
+            <img src="{% static "img/duck.png" %}" alt="webディレクター プロフィール画像">
+            <div class="profile-contents">
+                <p class="name"><a href="https://twitter.com/naoki_web">webディレクタブログの中の人</a></p>
+                <ul>
+                    <li>個人サービスを作ることが好き。</li>
+                    <li>ブログはマイペースに更新しています。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-tag-list">
+            <p class="footer-headline">タグリスト</p>
+            {% get_taglist %}
+        </div>
+    </div>
+    <nav class="site-navi sp-display">
+        <ul class="site-about">
+            {% include 'blog/components/site-navi.html' %}
+        </ul>
+    </nav>
+    <div class="rights-reserved">
+        <p>© 2014 webdirector-blog All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

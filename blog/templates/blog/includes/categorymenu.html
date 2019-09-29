@@ -1,5 +1,0 @@
-<ul>
-    {% for category in categorie %}
-    <li><a href="{% url 'blog:category_search' category_id=category.id %}">{{ category.name }}</a></li>
-    {% endfor %}
-</ul>

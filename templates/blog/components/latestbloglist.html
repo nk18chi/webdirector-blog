@@ -1,0 +1,14 @@
+{% load blog_extras %}
+<div class="sidebar-article-list">
+    <p class="sidebar-headline">最新記事</p>
+    <ul>
+        {% for post in blogpost %}
+        <li>
+            <div class="image-mini-square">
+                <img src="/media/{{ post.image_square.image }}" alt="{{ post.image_square.name }}">
+            </div>
+            <p><a href="{% url 'blog:post_detail' category_id=post.category_id pk=post.id %}">{{ post.title }}</a></p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

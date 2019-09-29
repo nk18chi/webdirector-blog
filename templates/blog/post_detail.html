@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load blog_extras %}
+
+
+{% block extrahead %}
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@naoki_web" />
+<meta property="og:url" content="" />
+<meta property="og:title" content="{{ blogpost.title }}" />
+<meta property="og:description" content="{{ blogpost.seo_description }}" />
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}/media/{{ blogpost.image_square.image }}" />
+{% endblock %}
+
+{% block title %}{{ blogpost.title }} - webディレクターブログ{% endblock %}
+
+
+{% block breadcrumbs %}
+{% if blogcategory %}
+<li><a href="{% url 'top' %}">Home</a><span class="arrow"></span></li>
+<li><a href="{% url 'blog:category_search' category_id=blogcategory.id %}">{{ blogcategory.name }}</a><span class="arrow"></span></li>
+<li><a href="">{{ blogpost.title }}</a></li>
+{% endif %}
+{% endblock breadcrumbs %}
+
+{% block content %}
+<article class="article article-post">
+    <div class="article-date">{{ blogpost.created | date_format }}</div>
+    <div class="article-container">
+        <div class="article-h1">
+            <h1 class="article-title">{{ blogpost.title }}</h1>
+        </div>
+        {% include 'blog/components/sns_button.html' %}
+        <div class="article-contents">
+            {{ blogpost.text_to_markdown | custom_html | safe }}
+        </div>
+        <div class="article-taglist">
+            <ul>
+                {% for bpt in blogpost.blogposttag_set.all %}
+                    <li>
+                        <a href="{% url 'blog:tag_search' tag_id=bpt.tag_id %}">{{ bpt.tag.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% include 'blog/components/sns_button.html' %}
+    </div>
+    </article>
+{% endblock content %}
