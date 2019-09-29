@@ -1,7 +1,7 @@
 from django.views import generic
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
-from .models import BlogPost, BlogCategory, BlogTag, BlogPostTag
+from .models import BlogPost, BlogCategory, BlogTag
 from .forms import ContactForm
 from user_agents import parse
 from django.contrib.syndication.views import Feed

@@ -16,6 +16,7 @@ api_urlpatterns = [
 urlpatterns = [
     url(r'^$', blog_views.TopView.as_view(), name='top'),
     url(r'^nk-admin/', admin.site.urls),
+    url('markdownx/', include('markdownx.urls')),
     url(r'^api/1.0/', include(api_urlpatterns)),
 
     url(r'^contact/$', blog_views.ContactView.as_view(
