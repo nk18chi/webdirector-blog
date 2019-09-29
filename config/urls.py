@@ -16,18 +16,13 @@ api_urlpatterns = [
 urlpatterns = [
     url(r'^$', blog_views.TopView.as_view(), name='top'),
     url(r'^nk-admin/', admin.site.urls),
-    path(r'api/1.0/', include(api_urlpatterns)),
+    url(r'^api/1.0/', include(api_urlpatterns)),
 
     url(r'^contact/$', blog_views.ContactView.as_view(
         template_name='static/contact.html'), name='contact'),
     url(r'^feeds/$', LatestEntriesFeed(), name='feeds'),
 
     url(r'^', include('blog.urls', namespace='blog')),
-]
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/1.0/', include(api_urlpatterns)),  # api/1.0/としてapi一覧を登録
 ]
 
 if settings.DEBUG:
