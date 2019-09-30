@@ -14,8 +14,8 @@ class BlogPostFeed(Feed):
 
     def items(self):
         return BlogPost.objects.filter(
-            status__exact=2
-        ).order_by('-created')
+            status__exact=1
+        ).order_by('-created_at')
 
     def get_context_data(self, **kwargs):
         context = super(BlogPostFeed, self).get_context_data(**kwargs)
@@ -32,8 +32,8 @@ class TopView(generic.ListView):
     def get_queryset(self):
         """return the last five published questions."""
         queryset = BlogPost.objects.filter(
-            status__exact=2
-        ).order_by('-created')
+            status__exact=1
+        ).order_by('-created_at')
         return queryset
 
 
@@ -52,9 +52,9 @@ class CategoryListView(generic.ListView):
     def get_queryset(self):
         get_object_or_404(BlogCategory, pk=self.kwargs['category_id'])
         return BlogPost.objects.filter(
-            status__exact=2,
+            status__exact=1,
             category__exact=self.kwargs['category_id']
-        ).order_by('-created')[:10]
+        ).order_by('-created_at')[:10]
 
 
 class TagListView(generic.ListView):
@@ -71,9 +71,9 @@ class TagListView(generic.ListView):
     def get_queryset(self):
         get_object_or_404(BlogTag, pk=self.kwargs['tag_id'])
         return BlogPost.objects.filter(
-            status__exact=2,
+            status__exact=1,
             blogposttag__tag_id__exact=self.kwargs['tag_id']
-        ).order_by('-created')[:10]
+        ).order_by('-created_at')[:10]
 
 
 class BlogPostView(generic.DetailView):

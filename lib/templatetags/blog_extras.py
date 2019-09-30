@@ -15,8 +15,8 @@ def get_blogcategory():
 @register.inclusion_tag('blog/components/latestbloglist.html')
 def get_latestbloglist():
     blogpost = BlogPost.objects.filter(
-        status__exact=2
-    ).order_by('-created')[:5]
+        status__exact=1
+    ).order_by('-created_at')[:5]
     return {'blogpost': blogpost}
 
 

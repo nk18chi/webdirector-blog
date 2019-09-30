@@ -3,7 +3,7 @@
 {% for post in latest_post_list %}
     <li class="article-list-item">
         <div class="article-detail">
-            <span class="article-date">{{ post.created | date_format }}</span>
+            <span class="article-date">{{ post.created_at | date_format }}</span>
             <span class="article-category">{{ post.category.name }}</span>
         </div>
         <div class="article-list-container">
