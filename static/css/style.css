@@ -180,6 +180,9 @@ html {
   color: #EE802F;
 }
 
+.hide {
+  display: none;
+}
 /*  ------------------- all css end ------------------- */
 
 /*  ------------------- pc css start ------------------- */
@@ -725,6 +728,32 @@ html {
     border-radius: 5px;
     background-color: #444;
     color: #fff;
+  }
+
+  .read-more {
+    width: 240px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .read-more-button {
+    font-weight: bold;
+    background-color: #2891dc;
+    border-radius: 36px;
+    color: #fff;
+  }
+
+  .read-more-button i {
+    margin-left: 8px;
+  }
+
+  .read-more p {
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .fa-spinner {
+    color: #2991dc;
   }
 
   /*  - main-content end - */

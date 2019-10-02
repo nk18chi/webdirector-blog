@@ -6,6 +6,27 @@ from .forms import ContactForm
 from user_agents import parse
 from django.contrib.syndication.views import Feed
 from django.shortcuts import get_object_or_404
+from django.conf import settings
+
+import urllib.parse as urlparse
+from urllib.parse import urlencode
+
+
+def get_alax_next_blogpost_url(arg=None):
+    api_url_bloppost = settings.BASE_URL + settings.API_URL + 'blogposts/'
+    page_size = settings.REST_FRAMEWORK['PAGE_SIZE']
+
+    # creat url to access for DRF
+    url_parts = list(urlparse.urlparse(api_url_bloppost))
+    query = dict(urlparse.parse_qsl(url_parts[4]))
+    param = {'limit': page_size, 'offset': page_size}
+    if arg:
+        param.update(arg)
+
+    query.update(param)
+    url_parts[4] = urlencode(query)
+
+    return urlparse.urlunparse(url_parts)
 
 
 class BlogPostFeed(Feed):
@@ -29,6 +50,11 @@ class TopView(generic.ListView):
     paginate_by = 10
     template_name = 'index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(TopView, self).get_context_data(**kwargs)
+        context['ajax_url'] = get_alax_next_blogpost_url()
+        return context
+
     def get_queryset(self):
         """return the last five published questions."""
         queryset = BlogPost.objects.filter(
@@ -47,6 +73,9 @@ class CategoryListView(generic.ListView):
         context = super(CategoryListView, self).get_context_data(**kwargs)
         context['blogcategory'] = BlogCategory.objects.get(
             pk=self.kwargs['category_id'])
+        context['ajax_url'] = get_alax_next_blogpost_url(
+            {'category': self.kwargs['category_id']})
+
         return context
 
     def get_queryset(self):
@@ -54,7 +83,7 @@ class CategoryListView(generic.ListView):
         return BlogPost.objects.filter(
             status__exact=1,
             category__exact=self.kwargs['category_id']
-        ).order_by('-created_at')[:10]
+        ).order_by('-created_at')
 
 
 class TagListView(generic.ListView):
@@ -66,14 +95,16 @@ class TagListView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super(TagListView, self).get_context_data(**kwargs)
         context['tagname'] = BlogTag.objects.get(pk=self.kwargs['tag_id'])
+        context['ajax_url'] = get_alax_next_blogpost_url(
+            {'tag': self.kwargs['tag_id']})
         return context
 
     def get_queryset(self):
         get_object_or_404(BlogTag, pk=self.kwargs['tag_id'])
         return BlogPost.objects.filter(
             status__exact=1,
-            blogposttag__tag_id__exact=self.kwargs['tag_id']
-        ).order_by('-created_at')[:10]
+            blog_tag__exact=self.kwargs['tag_id']
+        ).order_by('-created_at')
 
 
 class BlogPostView(generic.DetailView):
