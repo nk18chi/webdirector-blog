@@ -19,7 +19,7 @@ function getBlogPostData(url) {
         value["category"]["name"]
       }</span></div><div class="article-list-container"><h2><a href="/c_${
         value["category"]["id"]
-      }/p_${value["id"]}/">${
+      }/p_${value["id"]}/" target="_blank">${
         value["title"]
       }</a></h2><div class="article-list-containersub"><div class="image-square"><img src="${
         value["imageSquare"]["image"]

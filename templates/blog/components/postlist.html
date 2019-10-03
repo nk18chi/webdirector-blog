@@ -7,7 +7,7 @@
             <span class="article-category">{{ post.category.name }}</span>
         </div>
         <div class="article-list-container">
-            <h2><a href="{% url 'blog:post_detail' category_id=post.category_id pk=post.id %}">{{ post.title }}</a></h2>
+            <h2><a href="{% url 'blog:post_detail' category_id=post.category_id pk=post.id %}" target="_blank">{{ post.title }}</a></h2>
             <div class="article-list-containersub">
                 <div class="image-square">
                     <img src="/media/{{ post.image_square.image }}" alt="{{ post.image_square.name }}">
