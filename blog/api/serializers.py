@@ -1,6 +1,17 @@
 from rest_framework import serializers
 
-from blog.models import BlogPost, Image, BlogTag
+from blog.models import BlogPost, Image, BlogTag, BlogCategory
+
+from datetime import datetime
+
+
+class BlogCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BlogCategory
+        fields = (
+            'id',
+            'name',
+        )
 
 
 class ImageSerializer(serializers.ModelSerializer):
@@ -24,8 +35,10 @@ class BlogTagSerializer(serializers.ModelSerializer):
 
 class BlogPostSerializer(serializers.ModelSerializer):
     image_square = ImageSerializer(read_only=True)
+    category = BlogCategorySerializer(read_only=True)
     blog_tag = BlogTagSerializer(read_only=True, many=True)
     seo_description = serializers.SerializerMethodField()
+    created_at = serializers.SerializerMethodField()
 
     class Meta:
         model = BlogPost
@@ -41,3 +54,6 @@ class BlogPostSerializer(serializers.ModelSerializer):
 
     def get_seo_description(self, obj):
         return obj.seo_description[:140]
+
+    def get_created_at(self, obj):
+        return obj.created_at.strftime('%Y年%m月%d日')
