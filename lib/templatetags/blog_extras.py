@@ -56,13 +56,9 @@ def custom_html(text):
 
 
 @register.filter()
-def limit_text(str, ua_agent):
+def limit_text(str, num):
 
-    extract_number = 140
-    if parse(ua_agent).is_mobile:
-        extract_number = 80
-
-    return str[:extract_number]+'...'
+    return str[:num]+'...'
 
 
 @register.filter()

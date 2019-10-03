@@ -25,7 +25,7 @@ function getBlogPostData(url) {
         value["imageSquare"]["image"]
       }" alt="${
         value["imageSquare"]["name"]
-      }"></div><p class="article-thumbnail">${
+      }"></div><p class="article-description">${
         value["seoDescription"]
       }...</p></div>`;
 

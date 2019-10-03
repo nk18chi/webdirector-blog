@@ -12,13 +12,17 @@
                 <div class="image-square">
                     <img src="/media/{{ post.image_square.image }}" alt="{{ post.image_square.name }}">
                 </div>
-                <p class="article-thumbnail">{{ post.seo_description | limit_text:request.META.HTTP_USER_AGENT }}</p>
+                <div class="article-description-container">
+                    <p class="article-description">{{ post.seo_description | limit_text:140 }}</p>
+                </div>
             </div>
+            {% if post.blog_tag.all %}
             <ul class="article-list-tag">
                 {% for bpt in post.blog_tag.all %}
                     <li class="tag-list">{{ bpt.name }}</li>
                 {% endfor %}
             </ul>
+            {% endif %}
         </div>
     </li>
 {% endfor %}

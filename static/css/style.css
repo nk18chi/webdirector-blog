@@ -651,7 +651,7 @@ html {
     overflow: hidden;
   }
 
-  .article-thumbnail {
+  .article-description {
     font-size: 15px;
     line-height: 25px;
     color: #777;
@@ -1133,7 +1133,6 @@ html {
 
     .article-detail {
         overflow: hidden;
-        padding-top: 12px;
     }
 
     .article-category {
@@ -1370,7 +1369,7 @@ html {
 
     .article-list-item {
         border-bottom: 1px solid #ccc;
-        padding: 0px 12px;
+        padding: 12px 12px 16px;
     }
 
     .article-list-item:hover {
@@ -1425,16 +1424,19 @@ html {
         width: 100%;
     }
 
-    .article-thumbnail {
+    .article-description {
         font-size: 12px;
         color: #777;
         line-height: 20px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
     }
 
     .article-list-tag {
         overflow: hidden;
-        margin-top: 12px;
-        padding-bottom: 8px;
+        margin-top: 8px;
     }
 
     blockquote {
@@ -1649,7 +1651,7 @@ html {
         color: #fff !important;
         font-size: 12px;
         border-radius: 5px;
-        margin: 0px 3px 5px;
+        margin: 5px 3px 0px;
         padding: 5px;
         display: block;
     }
