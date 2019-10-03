@@ -22,6 +22,11 @@ urlpatterns = [
     url(r'^contact/$', blog_views.ContactView.as_view(
         template_name='static/contact.html'), name='contact'),
     url(r'^feeds/$', LatestEntriesFeed(), name='feeds'),
+    url(r'^robots\.txt$', TemplateView.as_view(
+        template_name="config/robots.txt", content_type='text/plain')),
+    url(r'^ads\.txt$', TemplateView.as_view(
+        template_name="config/ads.txt", content_type='text/plain')),
+
 
     url(r'^', include('blog.urls', namespace='blog')),
 ]
