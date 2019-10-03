@@ -1507,6 +1507,33 @@ html {
         color: #fff;
     }
 
+    .read-more {
+      width: 240px;
+      margin: 0 auto;
+      cursor: pointer;
+      margin-top: 32px;
+    }
+
+    .read-more p {
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .read-more-button {
+      font-weight: bold;
+      background-color: #2891dc;
+      border-radius: 36px;
+      color: #fff;
+    }
+
+    .read-more-button i {
+      margin-left: 8px;
+    }
+
+    .fa-spinner {
+      color: #2991dc;
+    }
+
     /*  - main-content end - */
 
     /*  - sidebar start - */
