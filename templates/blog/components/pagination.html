@@ -1,12 +1,12 @@
 {% load blog_extras %}
 
 {% if is_paginated %}
-{{ ajax_url }}
 <div class="read-more">
     <p class="read-more-button">もっと見る<i class="fas fa-arrow-circle-down"></i></p>
     <p><i class="fas fa-spinner fa-pulse fa-2x hide"></i></p>
 </div>
 {% endif %}
+
 
 {% comment %} {% if is_paginated %}
     <div class="pagination">

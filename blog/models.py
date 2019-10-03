@@ -41,8 +41,7 @@ class BlogPost(models.Model):
     created_at = models.DateTimeField(editable=True, default=datetime.now)
     updated_at = models.DateTimeField(editable=False, default=datetime.now)
     category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE)
-    image_square = models.ForeignKey(
-        Image, on_delete=models.CASCADE, null=True, blank=True)
+    image_square = models.ForeignKey(Image, on_delete=models.CASCADE)
     blog_tag = models.ManyToManyField(BlogTag)
 
     def __str__(self):

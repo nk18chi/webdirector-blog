@@ -22,7 +22,6 @@
     <meta name="description" content="{% block meta_description %}{% endblock %}">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     {% block extrahead %}{% endblock %}
-
 </head>
 
 <body>
@@ -130,5 +129,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </footer>
 
+<script>
+{% block extrajs %} {% endblock %}
+</script>
 </body>
 </html>

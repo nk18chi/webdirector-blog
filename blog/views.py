@@ -47,7 +47,7 @@ class BlogPostFeed(Feed):
 class TopView(generic.ListView):
 
     context_object_name = 'latest_post_list'
-    paginate_by = 10
+    paginate_by = settings.REST_FRAMEWORK['PAGE_SIZE']
     template_name = 'index.html'
 
     def get_context_data(self, **kwargs):
@@ -66,7 +66,7 @@ class TopView(generic.ListView):
 class CategoryListView(generic.ListView):
 
     context_object_name = 'latest_post_list'
-    paginate_by = 10
+    paginate_by = settings.REST_FRAMEWORK['PAGE_SIZE']
     template_name = 'blog/category_search.html'
 
     def get_context_data(self, **kwargs):
@@ -89,7 +89,7 @@ class CategoryListView(generic.ListView):
 class TagListView(generic.ListView):
 
     context_object_name = 'latest_post_list'
-    paginate_by = 10
+    paginate_by = settings.REST_FRAMEWORK['PAGE_SIZE']
     template_name = 'blog/tag_search.html'
 
     def get_context_data(self, **kwargs):

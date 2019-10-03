@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% load blog_extras %}
+{% load static %}
 
 {% block title %}{{ tagname.name }} - webディレクターブログ{% endblock %}
-
+{% block extrahead %}
+<script type="text/javascript" src="{% static '/js/getBlogPostPagination.js' %}"></script>
+{% endblock %}
 {% block breadcrumbs %}
 {% if tagname %}
 <li><a href="{% url 'top' %}">Home</a><span class="arrow"></span></li>
@@ -28,3 +31,7 @@
     {% endif %}
 </article>
 {% endblock content %}
+
+{% block extrajs %}
+let getPageAjaxUrl = '{{ ajax_url }}'
+{% endblock %}

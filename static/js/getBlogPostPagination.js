@@ -4,12 +4,6 @@ function getBlogPostData(url) {
     type: "get",
     dataType: "json"
   }).done(function(res) {
-    //nexr is None
-    if (res["next"]) {
-      $(".read-more-button").show();
-      $(".read-more .fas").hide();
-    }
-
     // result is None
     let data = res["results"];
     if ($.isEmptyObject(data)) {
@@ -22,9 +16,9 @@ function getBlogPostData(url) {
       let html = `<li class="article-list-item"><div class="article-detail"><span class="article-date">${
         value["createdAt"]
       }</span><span class="article-category">${
-        value["category"]
+        value["category"]["name"]
       }</span></div><div class="article-list-container"><h2><a href="/c_${
-        value["category"]
+        value["category"]["id"]
       }/p_${value["id"]}/">${
         value["title"]
       }</a></h2><div class="article-list-containersub"><div class="image-square"><img src="${
@@ -33,11 +27,26 @@ function getBlogPostData(url) {
         value["imageSquare"]["name"]
       }"></div><p class="article-thumbnail">${
         value["seoDescription"]
-      }...</p></div><ul class="article-list-tag">${
-        value["blogTag"]
-      }</ul></div></li>`;
+      }...</p></div>`;
+
+      if (0 < value["blogTag"].length) {
+        html += `<ul class="article-list-tag">`;
+        $.each(value["blogTag"], function(k, v) {
+          html += `<li class="tag-list">${v["name"]}</li>`;
+        });
+        html += `</ul>`;
+      }
+
+      html += `</div></li>`;
       $(".article-list").append(html);
     });
+
+    $(".read-more .fas").hide();
+    //nexr is None
+    if (res["next"]) {
+      $(".read-more-button").show();
+      getPageAjaxUrl = res["next"];
+    }
   });
 }
 
@@ -45,10 +54,7 @@ $(function() {
   $(".read-more-button").on("click", function() {
     $(this).hide();
     $(".read-more .fas").css("display", "inline-block");
-    setTimeout(function() {
-      getBlogPostData(
-        "http://127.0.0.1:8000/api/1.0/blogposts/?limit=10&offset=10"
-      );
-    }, 5000);
+    url = getPageAjaxUrl;
+    getBlogPostData(url);
   });
 });
