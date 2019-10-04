@@ -10,8 +10,8 @@ class LatestEntriesFeed(Feed):
 
     def items(self):
         return BlogPost.objects.filter(
-            status__exact=2
-        ).order_by('-created')[:10]
+            status__exact=1
+        ).order_by('-created_at')[:10]
 
     def item_title(self, item):
         return item.title

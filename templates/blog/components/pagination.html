@@ -1,6 +1,14 @@
 {% load blog_extras %}
 
 {% if is_paginated %}
+<div class="read-more">
+    <p class="read-more-button">もっと見る<i class="fas fa-arrow-circle-down"></i></p>
+    <p><i class="fas fa-spinner fa-pulse fa-2x hide"></i></p>
+</div>
+{% endif %}
+
+
+{% comment %} {% if is_paginated %}
     <div class="pagination">
         {% if page_obj.has_previous %}
             <span><a href="?page={{ page_obj.previous_page_number }}">前へ</a></span>
@@ -19,4 +27,4 @@
             <span><a href="?page={{ page_obj.next_page_number }}">次へ</a></span>
         {% endif %}
     </div>
-{% endif %}
+{% endif %} {% endcomment %}

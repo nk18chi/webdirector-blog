@@ -20,9 +20,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="{% static "img/logo_icon.png" %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{% block meta_description %}{% endblock %}">
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     {% block extrahead %}{% endblock %}
-
 </head>
 
 <body>
@@ -63,15 +62,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="sidebar">
             <div class="google-ad">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- webdirector-blog_pc_sidebar_top -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- responsive_ads -->
                 <ins class="adsbygoogle"
                     style="display:block"
                     data-ad-client="ca-pub-8066096747233555"
-                    data-ad-slot="1328901539"
-                    data-ad-format="auto"></ins>
+                    data-ad-slot="7466072655"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
                 <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
+                    (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
 
@@ -130,5 +130,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </footer>
 
+<script>
+{% block extrajs %} {% endblock %}
+</script>
 </body>
 </html>
