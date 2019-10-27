@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-27 00:43-0700\n"
+"POT-Creation-Date: 2019-10-27 01:37-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,3 +29,19 @@ msgstr "英語"
 #: templates/base.html:39
 msgid "webディレクターブログ"
 msgstr "web director blog"
+
+#: templates/blog/components/site-navi.html:3
+msgid "英語"
+msgstr "English"
+
+#: templates/blog/components/site-navi.html:4
+msgid "日本語"
+msgstr "Japanese"
+
+#: templates/blog/components/site-navi.html:5
+msgid "プロフィール"
+msgstr "Profile"
+
+#: templates/blog/components/site-navi.html:6
+msgid "お問い合わせ"
+msgstr "Contact"
