@@ -225,6 +225,11 @@ html {
     text-align: center;
   }
 
+  .active-border {
+    border-bottom: 3px solid #3398e2;
+    padding-bottom: 3px;
+  }
+
   .site-navi {
     float: right;
     padding: 28px 0;

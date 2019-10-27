@@ -20,11 +20,11 @@ msgstr ""
 
 #: config/settings.py:71
 msgid "Japanese"
-msgstr ""
+msgstr "日本語"
 
 #: config/settings.py:72
 msgid "English"
-msgstr ""
+msgstr "英語"
 
 #: templates/base.html:39
 msgid "webディレクターブログ"
