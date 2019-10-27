@@ -9,7 +9,7 @@ class BlogPostViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = BlogPostSerializer
 
     def get_queryset(self):
-        queryset = BlogPost.objects.filter(
+        queryset = BlogPost.objects.populate(True).filter(
             status__exact=1
         ).order_by('-created_at')
         category = self.request.query_params.get('category')

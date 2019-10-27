@@ -11,9 +11,14 @@ from django.conf import settings
 import urllib.parse as urlparse
 from urllib.parse import urlencode
 
+from django.utils import translation
+
 
 def get_alax_next_blogpost_url(arg=None):
-    api_url_bloppost = settings.BASE_URL + settings.API_URL + 'blogposts/'
+
+    cur_language = translation.get_language()
+    cur_language_path = "" if cur_language == settings.LANGUAGE_CODE else "/" + cur_language
+    api_url_bloppost = settings.BASE_URL + cur_language_path + settings.API_URL + 'blogposts/'
     page_size = settings.REST_FRAMEWORK['PAGE_SIZE']
 
     # creat url to access for DRF
