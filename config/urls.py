@@ -1,4 +1,5 @@
 from django.conf.urls import url, include
+from django.conf.urls.i18n import i18n_patterns
 from django.urls import path
 from django.contrib import admin
 from django.conf.urls.static import static
@@ -14,22 +15,23 @@ api_urlpatterns = [
 ]
 
 urlpatterns = [
-    url(r'^$', blog_views.TopView.as_view(), name='top'),
-    url(r'^nk-admin/', admin.site.urls),
-    url('markdownx/', include('markdownx.urls')),
-    url(r'^api/1.0/', include(api_urlpatterns)),
+    path('nk-admin/', admin.site.urls),
+    path('markdownx/', include('markdownx.urls')),
 
-    url(r'^contact/$', blog_views.ContactView.as_view(
-        template_name='static/contact.html'), name='contact'),
-    url(r'^feeds/$', LatestEntriesFeed(), name='feeds'),
-    url(r'^robots\.txt$', TemplateView.as_view(
+    path('robots\.txt', TemplateView.as_view(
         template_name="config/robots.txt", content_type='text/plain')),
-    url(r'^ads\.txt$', TemplateView.as_view(
-        template_name="config/ads.txt", content_type='text/plain')),
-
-
-    url(r'^', include('blog.urls', namespace='blog')),
+    path('ads\.txt', TemplateView.as_view(template_name="config/ads.txt", content_type='text/plain')),
 ]
+
+urlpatterns += i18n_patterns(
+    path('', include('blog.urls')),
+    path('api/1.0/', include(api_urlpatterns)),
+    path('contact/', blog_views.ContactView.as_view(
+        template_name='static/contact.html'), name='contact'),
+    path('feeds/', LatestEntriesFeed(), name='feeds'),
+    prefix_default_language=False
+)
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

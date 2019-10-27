@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load i18n %}
 {% load blog_extras %}
 <html lang="{{ LANGUAGE_CODE|default:'ja' }}">
 <head>
@@ -35,7 +36,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="site-name">
             <div class="logo">
                 <img src="{% static "img/logo.png" %}" alt="webディレクター ロゴ">
-                <p><a href="{% url 'top' %}">webディレクターブログ</a></p>
+                <p><a href="{% url 'blog:top' %}">{% trans "webディレクターブログ" %}</a></p>
             </div>
         </div>
         <nav class="site-navi pc-display">
