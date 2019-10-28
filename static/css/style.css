@@ -738,7 +738,6 @@ html {
   .read-more {
     width: 240px;
     margin: 0 auto;
-    cursor: pointer;
   }
 
   .read-more-button {
@@ -746,6 +745,7 @@ html {
     background-color: #2891dc;
     border-radius: 36px;
     color: #fff;
+    cursor: pointer;
   }
 
   .read-more-button i {
