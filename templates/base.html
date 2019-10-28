@@ -51,6 +51,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p><a href="{% url 'blog:top' %}">{% trans "webディレクターブログ" %}</a></p>
             </div>
         </div>
+        {% block switch_language %}
         <nav class="site-navi">
             <ul class="site-about">
                 <li>
@@ -66,6 +67,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <li><i class="far fa-envelope margin-right-10px"></i><a href="{% url 'contact' %}">{% trans "お問い合わせ" %}</a></li>
             </ul>
         </nav>
+        {% endblock%}
     </div>
 
     <div class="category-wrap">
