@@ -19,6 +19,8 @@
         type="text/css" media="all" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
     <link rel="shortcut icon" type="image/x-icon" href="{% static "img/logo_icon.png" %}">
+    <link rel="alternate" hreflang="ja" href="{% translate_url ja %}" />
+    <link rel="alternate" hreflang="en" href="{% translate_url en %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{% block meta_description %}{% endblock %}">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

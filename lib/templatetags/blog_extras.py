@@ -84,3 +84,24 @@ def specify_range(value, int):
 @register.simple_tag()
 def debug_object_dump(var):
     return vars(var)
+
+from django import template
+from django.urls import reverse, resolve
+from django.utils import translation
+
+class TranslatedURL(template.Node):
+    def __init__(self, language):
+        self.language = language
+    def render(self, context):
+        view = resolve(context['request'].path)
+        request_language = translation.get_language()
+        translation.activate(self.language)
+        pattern_name = view.app_names[0]+":"+view.url_name if view.app_names else view.url_name
+        url = reverse(pattern_name, args=view.args, kwargs=view.kwargs)
+        translation.activate(request_language)
+        return url
+
+@register.tag(name='translate_url')
+def do_translate_url(parser, token):
+    language = token.split_contents()[1]
+    return TranslatedURL(language)
