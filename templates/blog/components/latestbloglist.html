@@ -1,6 +1,7 @@
 {% load blog_extras %}
+{% load i18n %}
 <div class="sidebar-article-list">
-    <p class="sidebar-headline">最新記事</p>
+    <p class="sidebar-headline">{% trans "最新記事" %}</p>
     <ul>
         {% for post in blogpost %}
         <li>

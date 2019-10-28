@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-27 19:43-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config/settings.py:75
+msgid "Japanese"
+msgstr "日本語"
+
+#: config/settings.py:76
+msgid "English"
+msgstr "英語"
+
+#: templates/404.html:13
+msgid "ページが見つかりません。"
+msgstr "Error! The requested url was not found on this server."
+
+#: templates/500.html:13
+msgid "サーバーエラー"
+msgstr "Server Error."
+
+#: templates/base.html:18 templates/base.html:46 templates/index.html:6
+msgid "webディレクターブログ"
+msgstr "Web Director Blog"
+
+#: templates/base.html:89 templates/base.html:128
+msgid "タグリスト"
+msgstr "Tag List"
+
+#: templates/base.html:107
+msgid "Twitterタイムライン"
+msgstr "Twitter Timeline"
+
+#: templates/base.html:117 templates/blog/components/site-navi.html:14
+msgid "プロフィール"
+msgstr "Profile"
+
+#: templates/base.html:122
+msgid "個人サービスを作ることが好き。"
+msgstr "I am fond of developing apps."
+
+#: templates/base.html:123
+msgid "ブログはマイペースに更新しています。"
+msgstr "This blog is updated at random."
+
+#: templates/blog/category_search.html:31 templates/blog/tag_search.html:31
+#: templates/index.html:26
+msgid "記事がありません。"
+msgstr "No article."
+
+#: templates/blog/components/latestbloglist.html:4
+msgid "最新記事"
+msgstr "Latest Articles"
+
+#: templates/blog/components/pagination.html:6
+msgid "もっと見る"
+msgstr "Read More"
+
+#: templates/blog/components/site-navi.html:7
+#: templates/blog/components/site-navi.html:10
+msgid "日本語"
+msgstr "Japanese"
+
+#: templates/blog/components/site-navi.html:8
+#: templates/blog/components/site-navi.html:11
+msgid "英語"
+msgstr "English"
+
+#: templates/blog/components/site-navi.html:15 templates/static/contact.html:4
+#: templates/static/contact.html:8 templates/static/contact.html:13
+msgid "お問い合わせ"
+msgstr "Contact"
+
+#: templates/static/contact.html:19
+msgid "件名"
+msgstr "Subject"
+
+#: templates/static/contact.html:19 templates/static/contact.html:28
+#: templates/static/contact.html:35 templates/static/contact.html:45
+msgid "必須"
+msgstr "Required"
+
+#: templates/static/contact.html:28
+msgid "メールアドレス"
+msgstr "Email"
+
+#: templates/static/contact.html:35
+msgid "目的"
+msgstr "Purpose"
+
+#: templates/static/contact.html:45
+msgid "お問い合わせ内容"
+msgstr "Content"
+
+#: templates/static/contact.html:51
+msgid "送信する"
+msgstr "Submit"
+
+#, fuzzy
+#~| msgid "お問い合わせ"
+#~ msgid "問い合わせ"
+#~ msgstr "Contact"
+
+#, fuzzy
+#~| msgid "webディレクターブログ"
+#~ msgid "webディレクタブログの中の人"
+#~ msgstr "web director blog"

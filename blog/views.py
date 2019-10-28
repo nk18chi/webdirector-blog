@@ -5,15 +5,19 @@ from .models import BlogPost, BlogCategory, BlogTag
 from .forms import ContactForm
 from user_agents import parse
 from django.contrib.syndication.views import Feed
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.conf import settings
-
+from django.utils import translation
+from django.http import Http404
 import urllib.parse as urlparse
 from urllib.parse import urlencode
 
 
 def get_alax_next_blogpost_url(arg=None):
-    api_url_bloppost = settings.BASE_URL + settings.API_URL + 'blogposts/'
+
+    cur_language = translation.get_language()
+    cur_language_path = "" if cur_language == settings.LANGUAGE_CODE else "/" + cur_language
+    api_url_bloppost = settings.BASE_URL + cur_language_path + settings.API_URL + 'blogposts/'
     page_size = settings.REST_FRAMEWORK['PAGE_SIZE']
 
     # creat url to access for DRF
@@ -111,6 +115,19 @@ class BlogPostView(generic.DetailView):
 
     model = BlogPost
     template_name = 'blog/post_detail.html'
+
+    def get_object(self, *args, **kwargs):
+        obj = super(BlogPostView, self).get_object(*args, **kwargs)
+
+        # if the article is draft
+        if obj.status == 0:
+            raise Http404()
+
+        # if article in other language is draft
+        if settings.LANGUAGE_CODE != translation.get_language() and obj.status_en == 0:
+            raise Http404()
+
+        return obj
 
     def get_context_data(self, **kwargs):
 

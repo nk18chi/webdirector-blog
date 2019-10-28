@@ -5,6 +5,7 @@ django-cleanup==4.0.0
 django-filter==2.2.0
 django-markdown-deux==1.0.5
 django-markdownx==2.0.28
+django-modeltranslation==0.13.4
 djangorestframework==3.10.3
 djangorestframework-camel-case==1.1.1
 ez-setup==0.9
@@ -15,7 +16,6 @@ mysqlclient==1.4.4
 numpy==1.17.2
 Pillow==6.1.0
 pycodestyle==2.5.0
-PyMySQL==0.9.3
 python-dateutil==2.8.0
 pytz==2019.2
 six==1.12.0

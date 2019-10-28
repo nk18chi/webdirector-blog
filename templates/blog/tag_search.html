@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% load blog_extras %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}{{ tagname.name }} - webディレクターブログ{% endblock %}
+{% block title %}{{ tagname.name }}{% endblock %}
 {% block extrahead %}
 <script type="text/javascript" src="{% static '/js/getBlogPostPagination.js' %}"></script>
 {% endblock %}
 {% block breadcrumbs %}
 {% if tagname %}
-<li><a href="{% url 'top' %}">Home</a><span class="arrow"></span></li>
+<li><a href="{% url 'blog:top' %}">Home</a><span class="arrow"></span></li>
 <li><a href="">{{ tagname.name }}</a></li>
 {% endif %}
 {% endblock breadcrumbs %}
@@ -27,7 +28,7 @@
         </ul>
         {% include 'blog/components/pagination.html' %}
     {% else %}
-        <p>記事がありません。</p>
+        <p>{% trans "記事がありません。" %}</p>
     {% endif %}
 </article>
 {% endblock content %}

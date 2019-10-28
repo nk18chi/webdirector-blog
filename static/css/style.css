@@ -131,11 +131,12 @@ a {
 /*  ------------------- all css start ------------------- */
 
 html {
-  font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  font-family: system-ui;
+  color: #484848;
 }
 
-.margin-right-5px {
-  margin-right: 5px;
+.margin-right-10px {
+  margin-right: 10px;
 }
 
 .logo {
@@ -225,6 +226,8 @@ html {
     text-align: center;
   }
 
+
+
   .site-navi {
     float: right;
     padding: 28px 0;
@@ -236,10 +239,19 @@ html {
     font-size: 12px;
   }
 
+  .site-about li p {
+    display: inline-block;
+  }
+
   .site-about li a {
     font-size: 13px;
     font-weight: bold;
     color: #555;
+  }
+
+  .active-border {
+    border-bottom: 3px solid #3398e2;
+    padding-bottom: 3px;
   }
 
   .category-wrap {
@@ -733,7 +745,6 @@ html {
   .read-more {
     width: 240px;
     margin: 0 auto;
-    cursor: pointer;
   }
 
   .read-more-button {
@@ -741,6 +752,7 @@ html {
     background-color: #2891dc;
     border-radius: 36px;
     color: #fff;
+    cursor: pointer;
   }
 
   .read-more-button i {
@@ -1034,7 +1046,6 @@ html {
     }
 
     .header-wrap {
-        text-align: center;
         margin-top: 10px;
         overflow: hidden;
     }
@@ -1042,6 +1053,7 @@ html {
     .site-name {
         margin: 0px 0px 10px;
         padding: 10px 0;
+        text-align: center;
     }
 
     .site-name p {
@@ -1055,7 +1067,8 @@ html {
     }
 
     .logo {
-        text-align: center;
+        display: inline-block;
+        padding: 0 30px;
     }
 
     .category-wrap {
@@ -1097,6 +1110,71 @@ html {
         border-bottom: 3px solid #3398e2;
         position: relative;
         top: -2px;
+    }
+
+    .header-hamburger {
+      display: block;
+    }
+
+    .hamburger-bar, .hamburger-cancel {
+      display: inline-block;
+      position: absolute;
+      padding: 16px 16px;
+    }
+
+    .hamburger-cancel {
+      display: none;
+    }
+
+    .fa-bars, .fa-times-circle {
+      font-size: 24px;
+    }
+
+    .site-about {
+      display: none;
+      position: fixed;
+      z-index: 4;
+      overflow: scroll;
+      width: 100%;
+      background: #fff;
+      height: calc(100% - 50px);
+      border-top: 1px solid #d8d8d8;
+    }
+
+    .site-about li {
+      border-bottom: 1px solid #d8d8d8;
+      font-size: 20px;
+    }
+
+    .site-about li i {
+      padding: 15px;
+      padding-right: 0;
+      display: inline-block;
+      float: left;
+    }
+
+    .site-about li p a {
+      padding-left: 50px;
+    }
+
+    .site-about a {
+      padding: 15px;
+      display: block;
+      color: #484848;
+    }
+
+    .right-arrow {
+      position: absolute;
+      left: 95%;
+    }
+
+    .stack-free-text, .icon-free-comment, .hamburger-active {
+      display: none;
+    }
+
+    .nav-mask {
+      overflow: hidden;
+      /* position: fixed; */
     }
 
     /*  - header end - */
@@ -1672,27 +1750,6 @@ html {
     .footer-contents {
         overflow: hidden;
         padding: 0 5px 25px 5px;
-    }
-
-    .site-navi {
-        overflow: hidden;
-    }
-
-    .site-about li {
-        float: left;
-        font-size: 11px;
-        width: 50%;
-    }
-
-    .site-about a {
-        padding: 15px 0;
-        display: block;
-        vertical-align: middle;
-        text-align: center;
-    }
-
-    .site-about img {
-        width: 45px;
     }
 
     .profile {

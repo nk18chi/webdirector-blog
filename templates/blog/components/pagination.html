@@ -1,8 +1,9 @@
 {% load blog_extras %}
+{% load i18n %}
 
 {% if is_paginated %}
 <div class="read-more">
-    <p class="read-more-button">もっと見る<i class="fas fa-arrow-circle-down"></i></p>
+    <p class="read-more-button">{% trans "もっと見る" %}<i class="fas fa-arrow-circle-down"></i></p>
     <p><i class="fas fa-spinner fa-pulse fa-2x hide"></i></p>
 </div>
 {% endif %}

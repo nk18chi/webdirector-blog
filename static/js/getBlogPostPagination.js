@@ -7,7 +7,7 @@ function getBlogPostData(url) {
     // result is None
     let data = res["results"];
     if ($.isEmptyObject(data)) {
-      $(".read-more .fas").hide();
+      $(".read-more .fa-spinner").hide();
       return;
     }
 
@@ -41,7 +41,7 @@ function getBlogPostData(url) {
       $(".article-list").append(html);
     });
 
-    $(".read-more .fas").hide();
+    $(".read-more .fa-spinner").hide();
     //nexr is None
     if (res["next"]) {
       $(".read-more-button").show();
@@ -53,7 +53,7 @@ function getBlogPostData(url) {
 $(function() {
   $(".read-more-button").on("click", function() {
     $(this).hide();
-    $(".read-more .fas").css("display", "inline-block");
+    $(".read-more .fa-spinner").css("display", "inline-block");
     url = getPageAjaxUrl;
     getBlogPostData(url);
   });

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load blog_extras %}
+{% load i18n %}
 
 
 {% block extrahead %}
@@ -12,12 +13,41 @@
 <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}/media/{{ blogpost.image_square.image }}" />
 {% endblock %}
 
-{% block title %}{{ blogpost.title }} - webディレクターブログ{% endblock %}
+{% block hreflang %}
+    <link rel="alternate" hreflang="ja" href="{% translate_url ja %}" />
+    {% if blogpost.status_en == 1%}
+        <link rel="alternate" hreflang="en" href="{% translate_url en %}" />
+    {% endif %}
+{% endblock %}
+
+{% block title %}{{ blogpost.title }}{% endblock %}
+
+{% block switch_language %}
+<nav class="site-navi">
+    <ul class="site-about">
+        <li>
+            {% if LANGUAGE_CODE == "ja" %}
+            <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a class="active-border" href="{% translate_url ja %}">{% trans "日本語" %}</a></p>
+            {% if blogpost.status_en == 1%}
+                <p><a href="{% translate_url en %}">{% trans "英語" %}</a></p>
+            {% else %}
+                <p><a href="/en">{% trans "英語" %}</a></p>
+            {% endif %}
+            {% else %}
+            <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a href="{% translate_url ja %}">{% trans "日本語" %}</a></p>
+            <p><a class="active-border" href="{% translate_url en %}">{% trans "英語" %}</a></p>
+            {% endif %}
+        </li>
+        <li><i class="fas fa-address-card margin-right-10px"></i><a href="https://twitter.com/naoki_web">{% trans "プロフィール" %}</a></li>
+        <li><i class="far fa-envelope margin-right-10px"></i><a href="{% url 'contact' %}">{% trans "お問い合わせ" %}</a></li>
+    </ul>
+</nav>
+{% endblock%}
 
 
 {% block breadcrumbs %}
 {% if blogcategory %}
-<li><a href="{% url 'top' %}">Home</a><span class="arrow"></span></li>
+<li><a href="{% url 'blog:top' %}">Home</a><span class="arrow"></span></li>
 <li><a href="{% url 'blog:category_search' category_id=blogcategory.id %}">{{ blogcategory.name }}</a><span class="arrow"></span></li>
 <li><a href="">{{ blogpost.title }}</a></li>
 {% endif %}
