@@ -61,7 +61,7 @@ def limit_text(str, num):
 
 @register.filter()
 def date_format(value):
-    return value.strftime('%Y年%m月%d日')
+    return value.strftime('%Y-%m-%d')
 
 
 @register.filter()

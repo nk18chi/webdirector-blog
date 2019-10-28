@@ -56,4 +56,4 @@ class BlogPostSerializer(serializers.ModelSerializer):
         return obj.seo_description[:140]
 
     def get_created_at(self, obj):
-        return obj.created_at.strftime('%Y年%m月%d日')
+        return obj.created_at.strftime('%Y-%m-%d')
