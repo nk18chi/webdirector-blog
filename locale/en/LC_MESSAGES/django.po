@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-27 17:37-0700\n"
+"POT-Creation-Date: 2019-10-27 19:20-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,13 +26,6 @@ msgstr "日本語"
 msgid "English"
 msgstr "英語"
 
-#: templates/404.html:4 templates/500.html:4 templates/base.html:39
-#: templates/blog/category_search.html:9 templates/blog/post_detail.html:16
-#: templates/blog/tag_search.html:6 templates/index.html:6
-#: templates/static/contact.html:4
-msgid "webディレクターブログ"
-msgstr "Web Director Blog"
-
 #: templates/404.html:13
 msgid "ページが見つかりません。"
 msgstr "Error! The requested url was not found on this server."
@@ -41,28 +34,32 @@ msgstr "Error! The requested url was not found on this server."
 msgid "サーバーエラー"
 msgstr "Server Error."
 
-#: templates/base.html:82 templates/base.html:121
+#: templates/base.html:15 templates/base.html:43 templates/index.html:6
+msgid "webディレクターブログ"
+msgstr "Web Director Blog"
+
+#: templates/base.html:86 templates/base.html:125
 msgid "タグリスト"
 msgstr "Tag List"
 
-#: templates/base.html:100
+#: templates/base.html:104
 msgid "Twitterタイムライン"
 msgstr "Twitter Timeline"
 
-#: templates/base.html:110 templates/blog/components/site-navi.html:8
+#: templates/base.html:114 templates/blog/components/site-navi.html:9
 msgid "プロフィール"
 msgstr "Profile"
 
-#: templates/base.html:115
+#: templates/base.html:119
 msgid "個人サービスを作ることが好き。"
 msgstr "I am fond of developing apps."
 
-#: templates/base.html:116
+#: templates/base.html:120
 msgid "ブログはマイペースに更新しています。"
 msgstr "This blog is updated at random."
 
 #: templates/blog/category_search.html:31 templates/blog/tag_search.html:31
-#: templates/index.html:25
+#: templates/index.html:26
 msgid "記事がありません。"
 msgstr "No article."
 
@@ -74,15 +71,15 @@ msgstr "Latest Articles"
 msgid "もっと見る"
 msgstr "Read More"
 
-#: templates/blog/components/site-navi.html:5
+#: templates/blog/components/site-navi.html:6
 msgid "日本語"
 msgstr "Japanese"
 
-#: templates/blog/components/site-navi.html:6
+#: templates/blog/components/site-navi.html:7
 msgid "英語"
 msgstr "English"
 
-#: templates/blog/components/site-navi.html:9 templates/static/contact.html:4
+#: templates/blog/components/site-navi.html:10 templates/static/contact.html:4
 #: templates/static/contact.html:8 templates/static/contact.html:13
 msgid "お問い合わせ"
 msgstr "Contact"
