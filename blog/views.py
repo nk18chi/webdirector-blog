@@ -61,7 +61,7 @@ class TopView(generic.ListView):
 
     def get_queryset(self):
         """return the last five published questions."""
-        queryset = BlogPost.objects.populate(True).filter(
+        queryset = BlogPost.objects.filter(
             status__exact=1
         ).order_by('-created_at')
         return queryset
