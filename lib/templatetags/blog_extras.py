@@ -57,9 +57,7 @@ def custom_html(text):
 
 @register.filter()
 def limit_text(str, num):
-
     return str[:num]+'...'
-
 
 @register.filter()
 def date_format(value):
@@ -84,6 +82,11 @@ def specify_range(value, int):
 @register.simple_tag()
 def debug_object_dump(var):
     return vars(var)
+
+
+# https://stackoverflow.com/questions/11437454/django-templates-get-current-url-in-another-language
+# https://stackoverflow.com/questions/43139081/importerror-no-module-named-django-core-urlresolvers
+# https://docs.djangoproject.com/en/2.2/topics/http/urls/
 
 from django import template
 from django.urls import reverse, resolve

@@ -1,10 +1,15 @@
-{% load i18n %}
 {% load blog_extras %}
+{% load i18n %}
 <ul class="site-about">
     <li>
         <i class="fas fa-language margin-right-10px"></i>
+        {% if LANGUAGE_CODE == "ja" %}
+        <span class="active-border margin-right-10px"><a href="{% translate_url ja %}">{% trans "日本語" %}</a></span>
+        <span><a href="{% translate_url en %}">{% trans "英語" %}</a></span>
+        {% else %}
         <span class="margin-right-10px"><a href="{% translate_url ja %}">{% trans "日本語" %}</a></span>
         <span class="active-border"><a href="{% translate_url en %}">{% trans "英語" %}</a></span>
+        {% endif %}
     </li>
     <li><a href="https://twitter.com/naoki_web"><i class="fas fa-address-card margin-right-10px"></i>{% trans "プロフィール" %}</a></li>
     <li><a href="{% url 'contact' %}"><i class="far fa-envelope margin-right-10px"></i>{% trans "お問い合わせ" %}</a></li>
