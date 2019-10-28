@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-27 01:37-0700\n"
+"POT-Creation-Date: 2019-10-27 17:37-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,30 +18,106 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:71
+#: config/settings.py:75
 msgid "Japanese"
 msgstr "日本語"
 
-#: config/settings.py:72
+#: config/settings.py:76
 msgid "English"
 msgstr "英語"
 
-#: templates/base.html:39
+#: templates/404.html:4 templates/500.html:4 templates/base.html:39
+#: templates/blog/category_search.html:9 templates/blog/post_detail.html:16
+#: templates/blog/tag_search.html:6 templates/index.html:6
+#: templates/static/contact.html:4
 msgid "webディレクターブログ"
-msgstr "web director blog"
+msgstr "Web Director Blog"
 
-#: templates/blog/components/site-navi.html:3
-msgid "英語"
-msgstr "English"
+#: templates/404.html:13
+msgid "ページが見つかりません。"
+msgstr "Error! The requested url was not found on this server."
 
-#: templates/blog/components/site-navi.html:4
-msgid "日本語"
-msgstr "Japanese"
+#: templates/500.html:13
+msgid "サーバーエラー"
+msgstr "Server Error."
 
-#: templates/blog/components/site-navi.html:5
+#: templates/base.html:82 templates/base.html:121
+msgid "タグリスト"
+msgstr "Tag List"
+
+#: templates/base.html:100
+msgid "Twitterタイムライン"
+msgstr "Twitter Timeline"
+
+#: templates/base.html:110 templates/blog/components/site-navi.html:8
 msgid "プロフィール"
 msgstr "Profile"
 
+#: templates/base.html:115
+msgid "個人サービスを作ることが好き。"
+msgstr "I am fond of developing apps."
+
+#: templates/base.html:116
+msgid "ブログはマイペースに更新しています。"
+msgstr "This blog is updated at random."
+
+#: templates/blog/category_search.html:31 templates/blog/tag_search.html:31
+#: templates/index.html:25
+msgid "記事がありません。"
+msgstr "No article."
+
+#: templates/blog/components/latestbloglist.html:4
+msgid "最新記事"
+msgstr "Latest Articles"
+
+#: templates/blog/components/pagination.html:6
+msgid "もっと見る"
+msgstr "Read More"
+
+#: templates/blog/components/site-navi.html:5
+msgid "日本語"
+msgstr "Japanese"
+
 #: templates/blog/components/site-navi.html:6
+msgid "英語"
+msgstr "English"
+
+#: templates/blog/components/site-navi.html:9 templates/static/contact.html:4
+#: templates/static/contact.html:8 templates/static/contact.html:13
 msgid "お問い合わせ"
 msgstr "Contact"
+
+#: templates/static/contact.html:19
+msgid "件名"
+msgstr "Subject"
+
+#: templates/static/contact.html:19 templates/static/contact.html:28
+#: templates/static/contact.html:35 templates/static/contact.html:45
+msgid "必須"
+msgstr "Required"
+
+#: templates/static/contact.html:28
+msgid "メールアドレス"
+msgstr "Email"
+
+#: templates/static/contact.html:35
+msgid "目的"
+msgstr "Purpose"
+
+#: templates/static/contact.html:45
+msgid "お問い合わせ内容"
+msgstr "Content"
+
+#: templates/static/contact.html:51
+msgid "送信する"
+msgstr "Submit"
+
+#, fuzzy
+#~| msgid "お問い合わせ"
+#~ msgid "問い合わせ"
+#~ msgstr "Contact"
+
+#, fuzzy
+#~| msgid "webディレクターブログ"
+#~ msgid "webディレクタブログの中の人"
+#~ msgstr "web director blog"

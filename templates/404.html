@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}404 - webディレクターブログ{% endblock %}
+{% block title %}404 - {% trans "webディレクターブログ" %}{% endblock %}
 
 {% block breadcrumbs %}
 <li><a href="{% url 'blog:top' %}">Home</a><span class="arrow"></span></li>
@@ -9,7 +10,7 @@
 
 {% block content %}
 <article class="article">
-    <h1 class="article-list-h1">ページが見つかりません。</h1>
+    <h1 class="article-list-h1">{% trans "ページが見つかりません。" %}</h1>
     <p>404 Not Found.</p>
 </article>
 {% endblock content %}

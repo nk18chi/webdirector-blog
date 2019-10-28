@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}500 - webディレクターブログ{% endblock %}
+{% block title %}500 - {% trans "webディレクターブログ" %}{% endblock %}
 
 {% block breadcrumbs %}
 <li><a href="{% url 'blog:top' %}">Home</a><span class="arrow"></span></li>
@@ -9,7 +10,7 @@
 
 {% block content %}
 <article class="article">
-    <h1 class="article-list-h1">サーバーエラー</h1>
+    <h1 class="article-list-h1">{% trans "サーバーエラー" %}</h1>
     <p>500 Internal Server Error.</p>
 </article>
 {% endblock content %}

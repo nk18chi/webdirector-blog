@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load blog_extras %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}webディレクターブログ{% endblock %}
+{% block title %}{% trans "webディレクターブログ" %}{% endblock %}
 
 {% block extrahead %}
 <script type="text/javascript" src="{% static '/js/getBlogPostPagination.js' %}"></script>
@@ -21,7 +22,7 @@
         </ul>
         {% include 'blog/components/pagination.html' %}
     {% else %}
-        <p>記事がありません。</p>
+        <p>{% trans "記事がありません。" %}</p>
     {% endif %}
 </article>
 {% endblock content %}

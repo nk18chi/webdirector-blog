@@ -1,17 +1,18 @@
 from django import forms
 from django.core.mail import send_mail
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 
 
 class ContactForm(forms.Form):
     title = forms.CharField()
     email = forms.EmailField()
     choice = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=(
-        ('blog', 'ブログについて'),
-        ('jobs', '仕事の依頼について'),
-        ('interview', '取材について'),
-        ('ads', '広告掲載について'),
-        ('other', 'その他について'),
+        ('blog', _('ブログについて')),
+        ('jobs', _('仕事の依頼について')),
+        ('interview', _('取材について')),
+        ('ads', _('広告掲載について')),
+        ('other', _('その他について')),
     ))
     message = forms.CharField(widget=forms.Textarea)
 

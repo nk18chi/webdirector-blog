@@ -79,7 +79,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             {% get_latestbloglist %}
 
             <div class="sidebar-tag-list">
-                <p class="sidebar-headline">タグリスト</p>
+                <p class="sidebar-headline">{% trans "タグリスト" %}</p>
                 {% get_taglist %}
             </div>
 
@@ -96,7 +96,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div> {% endcomment %}
 
             <div>
-                <p class="sidebar-headline">Twitterタイムライン</p>
+                <p class="sidebar-headline">{% trans "Twitterタイムライン" %}</p>
                 <a class="twitter-timeline" height="700px" href="https://twitter.com/naoki_web?ref_src=twsrc%5Etfw">Tweets by naoki_web</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </div>
@@ -106,18 +106,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer class="footer">
     <div class="footer-contents">
         <div class="profile">
-            <p class="footer-headline">プロフィール</p>
+            <p class="footer-headline">{% trans "プロフィール" %}</p>
             <img src="{% static "img/duck.png" %}" alt="webディレクター プロフィール画像">
             <div class="profile-contents">
-                <p class="name"><a href="https://twitter.com/naoki_web">webディレクタブログの中の人</a></p>
+                <p class="name"><a href="https://twitter.com/naoki_web">Naoki</a></p>
                 <ul>
-                    <li>個人サービスを作ることが好き。</li>
-                    <li>ブログはマイペースに更新しています。</li>
+                    <li>{% trans "個人サービスを作ることが好き。" %}</li>
+                    <li>{% trans "ブログはマイペースに更新しています。" %}</li>
                 </ul>
             </div>
         </div>
         <div class="footer-tag-list">
-            <p class="footer-headline">タグリスト</p>
+            <p class="footer-headline">{% trans "タグリスト" %}</p>
             {% get_taglist %}
         </div>
     </div>

@@ -1,21 +1,22 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}問い合わせ - webディレクターブログ{% endblock %}
+{% block title %}{% trans "お問い合わせ" %} - {% trans "webディレクターブログ" %}{% endblock %}
 
 {% block breadcrumbs %}
 <li><a href="{% url 'blog:top' %}">Home</a><span class="arrow"></span></li>
-<li><a href="">問い合わせ</a></li>
+<li><a href="">{% trans "お問い合わせ" %}</a></li>
 {% endblock breadcrumbs %}
 
 {% block content %}
 <article class="article">
-    <h1 class="article-list-h1">問い合わせ</h1>
+    <h1 class="article-list-h1">{% trans "お問い合わせ" %}</h1>
     <form method="post" class="contact-form">
         {% csrf_token %}
         <dl>
             {{ form.title.errors }}
             <dt>
-                <label for="id_title">件名<span class="form-must-icon">必須</span></label>
+                <label for="id_title">{% trans "件名" %}<span class="form-must-icon">{% trans "必須" %}</span></label>
             </dt>
             <dd>
                 {{ form.title }}
@@ -24,14 +25,14 @@
 
         <dl>
             <dt>
-                <label for="id_email">メールアドレス<span class="form-must-icon">必須</span></label>
+                <label for="id_email">{% trans "メールアドレス" %}<span class="form-must-icon">{% trans "必須" %}</span></label>
             </dt>
             <dd>{{ form.email }}</dd>
         </dl>
 
         <dl>
             <dt>
-                <label for="id_puroose">目的<span class="form-must-icon">必須</span></label>
+                <label for="id_puroose">{% trans "目的" %}<span class="form-must-icon">{% trans "必須" %}</span></label>
             </dt>
             <dd class="checkbox">
                 {{ form.choice.errors }}
@@ -41,13 +42,13 @@
 
         <dl>
             <dt>
-                <label for="id_message">問い合わせ内容<span class="form-must-icon">必須</span></label>
+                <label for="id_message">{% trans "お問い合わせ内容" %}<span class="form-must-icon">{% trans "必須" %}</span></label>
             </dt>
             <dd>{{ form.message }}</dd>
         </dl>
 
         <div class="contact-submit-container">
-            <input type='submit' value='送信する' class="contact-submit">
+            <input type='submit' value='{% trans "送信する" %}' class="contact-submit">
         </div>
     </form>
 </article>

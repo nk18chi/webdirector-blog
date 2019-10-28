@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% load blog_extras %}
 {% load static %}
+{% load i18n %}
 
 {% block extrahead %}
 <script type="text/javascript" src="{% static '/js/getBlogPostPagination.js' %}"></script>
 {% endblock %}
-{% block title %}{{ blogcategory.name }} - webディレクターブログ{% endblock %}
+{% block title %}{{ blogcategory.name }} - {% trans "webディレクターブログ" %}{% endblock %}
 
 {% block breadcrumbs %}
 {% if blogcategory %}
@@ -27,7 +28,7 @@
         </ul>
         {% include 'blog/components/pagination.html' %}
     {% else %}
-        <p>記事がありません。</p>
+        <p>{% trans "記事がありません。" %}</p>
     {% endif %}
 </article>
 {% endblock content %}
