@@ -51,23 +51,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p><a href="{% url 'blog:top' %}">{% trans "webディレクターブログ" %}</a></p>
             </div>
         </div>
-        {% block switch_language %}
+
         <nav class="site-navi">
             <ul class="site-about">
+                {% block switch_language %}
                 <li>
                     {% if LANGUAGE_CODE == "ja" %}
-                    <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a class="active-border" href="{% translate_url ja %}">{% trans "日本語" %}</a></p>
-                    <p><a href="{% translate_url en %}">{% trans "英語" %}</a></p>
+                    <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a class="active-border" href="{% translate_url ja %}">{% trans "日本語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+                    <p><a href="{% translate_url en %}">{% trans "英語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
                     {% else %}
-                    <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a href="{% translate_url ja %}">{% trans "日本語" %}</a></p>
-                    <p><a class="active-border" href="{% translate_url en %}">{% trans "英語" %}</a></p>
+                    <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a href="{% translate_url ja %}">{% trans "日本語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+                    <p><a class="active-border" href="{% translate_url en %}">{% trans "英語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
                     {% endif %}
                 </li>
-                <li><i class="fas fa-address-card margin-right-10px"></i><a href="https://twitter.com/naoki_web">{% trans "プロフィール" %}</a></li>
-                <li><i class="far fa-envelope margin-right-10px"></i><a href="{% url 'contact' %}">{% trans "お問い合わせ" %}</a></li>
+                {% endblock%}
+                <li><i class="fas fa-address-card margin-right-10px"></i><a href="https://twitter.com/naoki_web">{% trans "プロフィール" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></li>
+                <li><i class="far fa-envelope margin-right-10px"></i><a href="{% url 'contact' %}">{% trans "お問い合わせ" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></li>
             </ul>
         </nav>
-        {% endblock%}
+
     </div>
 
     <div class="category-wrap">

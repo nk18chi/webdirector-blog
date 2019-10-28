@@ -226,7 +226,9 @@ html {
     text-align: center;
   }
 
-
+  .header-hamburger, .right-arrow {
+    display: none;
+  }
 
   .site-navi {
     float: right;
@@ -1166,6 +1168,10 @@ html {
     .right-arrow {
       position: absolute;
       left: 95%;
+    }
+
+    .right-arrow i {
+      padding: 0px !important;
     }
 
     .stack-free-text, .icon-free-comment, .hamburger-active {
