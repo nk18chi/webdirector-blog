@@ -13,7 +13,14 @@
 <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}/media/{{ blogpost.image_square.image }}" />
 {% endblock %}
 
-{% block title %}{{ blogpost.title }} - {% trans "webディレクターブログ" %}{% endblock %}
+{% block hreflang %}
+    <link rel="alternate" hreflang="ja" href="{% translate_url ja %}" />
+    {% if blogpost.status_en == 1%}
+        <link rel="alternate" hreflang="en" href="{% translate_url en %}" />
+    {% endif %}
+{% endblock %}
+
+{% block title %}{{ blogpost.title }}{% endblock %}
 
 
 {% block breadcrumbs %}
