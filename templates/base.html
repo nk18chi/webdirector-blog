@@ -40,14 +40,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="header">
     <div class="header-wrap">
+        <div class="header-hamburger">
+          <span class="hamburger-bar" style=""><i class="fas fa-bars"></i></span>
+          <span class="hamburger-cancel" style="display: none;"><i class="far fa-times-circle"></i></span>
+        </div>
+
         <div class="site-name">
             <div class="logo">
                 <img src="{% static "img/logo.png" %}" alt="webディレクター ロゴ">
                 <p><a href="{% url 'blog:top' %}">{% trans "webディレクターブログ" %}</a></p>
             </div>
         </div>
-        <nav class="site-navi pc-display">
-            {% include 'blog/components/site-navi.html' %}
+        <nav class="site-navi">
+            <ul class="site-about">
+                <li>
+                    {% if LANGUAGE_CODE == "ja" %}
+                    <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a class="active-border" href="{% translate_url ja %}">{% trans "日本語" %}</a></p>
+                    <p><a href="{% translate_url en %}">{% trans "英語" %}</a></p>
+                    {% else %}
+                    <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a href="{% translate_url ja %}">{% trans "日本語" %}</a></p>
+                    <p><a class="active-border" href="{% translate_url en %}">{% trans "英語" %}</a></p>
+                    {% endif %}
+                </li>
+                <li><i class="fas fa-address-card margin-right-10px"></i><a href="https://twitter.com/naoki_web">{% trans "プロフィール" %}</a></li>
+                <li><i class="far fa-envelope margin-right-10px"></i><a href="{% url 'contact' %}">{% trans "お問い合わせ" %}</a></li>
+            </ul>
         </nav>
     </div>
 
@@ -128,17 +145,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             {% get_taglist %}
         </div>
     </div>
-    <nav class="site-navi sp-display">
-        <ul class="site-about">
-            {% include 'blog/components/site-navi.html' %}
-        </ul>
-    </nav>
     <div class="rights-reserved">
         <p>© 2014 webdirector-blog All Rights Reserved.</p>
     </div>
 </footer>
 
 <script>
+$('.hamburger-bar').click(function () {
+    $('.site-about').show()
+    $('.hamburger-bar').hide();
+    $('.hamburger-cancel').show()
+    $('.category-wrap').hide();
+    $('html').addClass('nav-mask')
+})
+
+$('.hamburger-cancel').click(function () {
+    $('.site-about').hide()
+    $('.hamburger-cancel').hide();
+    $('.hamburger-bar').show();
+    $('.category-wrap').show();
+    $('html').removeClass('nav-mask')
+})
 {% block extrajs %} {% endblock %}
 </script>
 </body>
