@@ -1,4 +1,4 @@
-function getBlogPostData(url) {
+function getBlogPostData(url, la) {
   $.ajax({
     url: url,
     type: "get",
@@ -17,7 +17,7 @@ function getBlogPostData(url) {
         value["createdAt"]
       }</span><span class="article-category">${
         value["category"]["name"]
-      }</span></div><div class="article-list-container"><h2><a href="/c_${
+      }</span></div><div class="article-list-container"><h2><a href="c_${
         value["category"]["id"]
       }/p_${value["id"]}/" target="_blank">${
         value["title"]
@@ -45,7 +45,7 @@ function getBlogPostData(url) {
     //nexr is None
     if (res["next"]) {
       $(".read-more-button").show();
-      getPageAjaxUrl = res["next"];
+      ajaxUrl = res["next"];
     }
   });
 }
@@ -54,7 +54,7 @@ $(function() {
   $(".read-more-button").on("click", function() {
     $(this).hide();
     $(".read-more .fa-spinner").css("display", "inline-block");
-    url = getPageAjaxUrl;
+    url = ajaxUrl;
     getBlogPostData(url);
   });
 });
