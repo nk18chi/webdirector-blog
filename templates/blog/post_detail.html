@@ -14,7 +14,9 @@
 {% endblock %}
 
 {% block hreflang %}
-    <link rel="alternate" hreflang="ja" href="{% translate_url ja %}" />
+    {% if blogpost.status_ja == 1%}
+        <link rel="alternate" hreflang="ja" href="{% translate_url ja %}" />
+    {% endif %}
     {% if blogpost.status_en == 1%}
         <link rel="alternate" hreflang="en" href="{% translate_url en %}" />
     {% endif %}
@@ -23,25 +25,23 @@
 {% block title %}{{ blogpost.title }}{% endblock %}
 
 {% block switch_language %}
-<nav class="site-navi">
-    <ul class="site-about">
-        <li>
-            {% if LANGUAGE_CODE == "ja" %}
-            <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a class="active-border" href="{% translate_url ja %}">{% trans "日本語" %}</a></p>
-            {% if blogpost.status_en == 1%}
-                <p><a href="{% translate_url en %}">{% trans "英語" %}</a></p>
-            {% else %}
-                <p><a href="/en">{% trans "英語" %}</a></p>
-            {% endif %}
-            {% else %}
-            <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a href="{% translate_url ja %}">{% trans "日本語" %}</a></p>
-            <p><a class="active-border" href="{% translate_url en %}">{% trans "英語" %}</a></p>
-            {% endif %}
-        </li>
-        <li><i class="fas fa-address-card margin-right-10px"></i><a href="https://twitter.com/naoki_web">{% trans "プロフィール" %}</a></li>
-        <li><i class="far fa-envelope margin-right-10px"></i><a href="{% url 'contact' %}">{% trans "お問い合わせ" %}</a></li>
-    </ul>
-</nav>
+<li>
+    {% if LANGUAGE_CODE == "ja" %}
+        <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a class="active-border" href="{% translate_url ja %}">{% trans "日本語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+        {% if blogpost.status_en == 1%}
+            <p><a href="{% translate_url en %}">{% trans "英語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+        {% else %}
+            <p><a href="/en">{% trans "英語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+        {% endif %}
+    {% else %}
+        {% if blogpost.status_ja == 0 %}
+            <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a href="/">{% trans "日本語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+        {% else %}
+            <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a href="{% translate_url ja %}">{% trans "日本語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+        {% endif %}
+        <p><a class="active-border" href="{% translate_url en %}">{% trans "英語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+    {% endif %}
+</li>
 {% endblock%}
 
 
