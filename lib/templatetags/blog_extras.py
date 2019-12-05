@@ -1,3 +1,6 @@
+from django.http import Http404
+from django.utils import translation
+from django.urls import reverse, resolve
 from django import template
 from blog.models import BlogCategory, BlogPost, BlogTag
 from user_agents import parse
@@ -44,8 +47,10 @@ def custom_html(text):
     # 画像の保存先を指定する
     text = re.sub(r'<img(.*?)src="(?!http)(.*?)"',
                   r'<img\1src="/media/\2"', text)
-    text = re.sub(r'<img(.*?)src=(.*?)>',
-                  r'<div class="article-image-container"><img\1src=\2></div>', text)
+    text = re.sub(
+        r'<img(.*?)src=(.*?)>',
+        r'<div class="article-image-container"><img\1src=\2></div>',
+        text)
 
     # code-prettifyを使うためにpreにclassをつける
     text = re.sub(r'<code>', r'<code class="code-simple">', text)
@@ -57,7 +62,8 @@ def custom_html(text):
 
 @register.filter()
 def limit_text(str, num):
-    return str[:num]+'...'
+    return str[:num] + '...'
+
 
 @register.filter()
 def date_format(value):
@@ -76,7 +82,7 @@ def sub_int(value, int):
 
 @register.filter()
 def specify_range(value, int):
-    return range(value-int, value+int+1)
+    return range(value - int, value + int + 1)
 
 
 @register.simple_tag()
@@ -88,21 +94,21 @@ def debug_object_dump(var):
 # https://stackoverflow.com/questions/43139081/importerror-no-module-named-django-core-urlresolvers
 # https://docs.djangoproject.com/en/2.2/topics/http/urls/
 
-from django import template
-from django.urls import reverse, resolve
-from django.utils import translation
 
 class TranslatedURL(template.Node):
     def __init__(self, language):
         self.language = language
+
     def render(self, context):
         view = resolve(context['request'].path)
         request_language = translation.get_language()
         translation.activate(self.language)
-        pattern_name = view.app_names[0]+":"+view.url_name if view.app_names else view.url_name
+        pattern_name = view.app_names[0] + ":" + \
+            view.url_name if view.app_names else view.url_name
         url = reverse(pattern_name, args=view.args, kwargs=view.kwargs)
         translation.activate(request_language)
         return url
+
 
 @register.tag(name='translate_url')
 def do_translate_url(parser, token):
