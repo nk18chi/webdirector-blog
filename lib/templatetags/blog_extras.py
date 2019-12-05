@@ -100,7 +100,10 @@ class TranslatedURL(template.Node):
         self.language = language
 
     def render(self, context):
-        view = resolve(context['request'].path)
+        try:
+            view = resolve(context['request'].path)
+        except Http404:
+            return Http404()
         request_language = translation.get_language()
         translation.activate(self.language)
         pattern_name = view.app_names[0] + ":" + \
