@@ -20,7 +20,6 @@ urlpatterns = [
 
     path('robots\.txt', TemplateView.as_view(
         template_name="config/robots.txt", content_type='text/plain')),
-    path('ads\.txt', TemplateView.as_view(template_name="config/ads.txt", content_type='text/plain')),
 ]
 
 urlpatterns += i18n_patterns(
