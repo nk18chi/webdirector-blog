@@ -27,19 +27,19 @@
 {% block switch_language %}
 <li>
     {% if LANGUAGE_CODE == "ja" %}
-        <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a class="active-border" href="{% translate_url ja %}">{% trans "日本語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+        <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a class="active-border" href="{% translate_url ja %}">日本語<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
         {% if blogpost.status_en == 1%}
-            <p><a href="{% translate_url en %}">{% trans "英語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+            <p><a href="{% translate_url en %}">English<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
         {% else %}
-            <p><a href="/en">{% trans "英語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+            <p><a href="/en">English<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
         {% endif %}
     {% else %}
         {% if blogpost.status_ja == 0 %}
-            <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a href="/">{% trans "日本語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+            <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a href="/">日本語<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
         {% else %}
-            <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a href="{% translate_url ja %}">{% trans "日本語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+            <p class="margin-right-10px"><i class="fas fa-language margin-right-10px"></i><a href="{% translate_url ja %}">日本語<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
         {% endif %}
-        <p><a class="active-border" href="{% translate_url en %}">{% trans "英語" %}<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
+        <p><a class="active-border" href="{% translate_url en %}">英語<span class="right-arrow"><i class="fas fa-chevron-right"></i></span></a></p>
     {% endif %}
 </li>
 {% endblock%}
