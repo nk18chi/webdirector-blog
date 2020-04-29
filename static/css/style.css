@@ -131,7 +131,7 @@ a {
 /*  ------------------- all css start ------------------- */
 
 html {
-  font-family: system-ui;
+  font-family: "Open Sans", sans-serif;
   color: #484848;
 }
 
@@ -407,7 +407,6 @@ html {
     font-size: 30px;
     color: #222;
     line-height: 50px;
-    word-break: break-all;
   }
 
   h2#_1 {
@@ -426,8 +425,7 @@ html {
 
   .article-contents p {
     line-height: 36px;
-    font-size: 17px;
-    word-break: break-all;
+    font-size: 20px;
     margin-bottom: 24px;
   }
 
@@ -1249,7 +1247,6 @@ html {
         font-size: 24px;
         color: #222;
         line-height: 40px;
-        word-break: break-all;
     }
 
     h2#_1 {
@@ -1267,9 +1264,8 @@ html {
 
     .article-contents p {
         margin: 16px 0;
-        font-size: 16px;
+        font-size: 17px;
         line-height: 34px;
-        word-break: break-all;
         margin-bottom: 24px;
     }
 
