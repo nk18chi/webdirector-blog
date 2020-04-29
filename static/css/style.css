@@ -424,8 +424,8 @@ html {
   }
 
   .article-contents p {
-    line-height: 36px;
-    font-size: 20px;
+    line-height: 40px;
+    font-size: 18px;
     margin-bottom: 24px;
   }
 
@@ -682,7 +682,6 @@ html {
     color: #464646;
     border: solid 3px #2d8fdd;
     margin-bottom: 60px;
-    margin-top: -24px;
   }
 
   blockquote:before {
@@ -1265,7 +1264,7 @@ html {
     .article-contents p {
         margin: 16px 0;
         font-size: 17px;
-        line-height: 34px;
+        line-height: 36px;
         margin-bottom: 24px;
     }
 
@@ -1527,7 +1526,6 @@ html {
         color: #464646;
         border: solid 3px #2d8fdd;
         margin-bottom: 50px;
-        margin-top: -24px;
     }
 
     blockquote:before {
